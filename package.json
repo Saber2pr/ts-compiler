@@ -1,0 +1,24 @@
+{
+  "name": "@saber2pr/ts-read-exports",
+  "version": "0.0.1",
+  "description": "read ts exports.",
+  "repository": {
+    "type": "git",
+    "url": "git+____"
+  },
+  "author": "saber2pr",
+  "license": "ISC",
+  "files": [
+    "lib/core/*",
+    "lib/index.*"
+  ],
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "node ./lib/test/test.js",
+    "start": "tsc --watch"
+  },
+  "dependencies": {
+    "@types/node": "^16.3.3",
+    "typescript": "^4.3.5"
+  }
+}
