@@ -15,7 +15,8 @@
   "main": "./lib/index.js",
   "scripts": {
     "test": "node ./lib/test/test.js",
-    "start": "tsc --watch"
+    "start": "tsc --watch",
+    "prepublishOnly": "tsc"
   },
   "dependencies": {
     "@types/node": "^16.3.3",
