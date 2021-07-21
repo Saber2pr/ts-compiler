@@ -4,7 +4,7 @@
   "description": "read ts exports.",
   "repository": {
     "type": "git",
-    "url": "git+____"
+    "url": "git+https://github.com/Saber2pr/ts-read-exports.git"
   },
   "author": "saber2pr",
   "license": "ISC",
