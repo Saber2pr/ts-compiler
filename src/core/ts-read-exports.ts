@@ -1,14 +1,29 @@
-import fs from 'fs/promises';
+import fs from 'fs';
+import { resolve } from 'path';
 import ts from 'typescript';
-import vm from 'vm'
+import { promisify } from 'util';
+import vm from 'vm';
+
+// 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
+const context = {}
+const contextModule = {
+  ...module, require: (id: string) => {
+    const uri = resolve(id)
+    if (uri in context) {
+      vm.runInContext(context[uri], vm.createContext(contextModule))
+      return contextModule.exports
+    }
+    return module.require(id)
+  }
+}
 
 /**
  * 编译ts代码字符串，输出js字符串
  */
-export function read(code: string, compilerOptions?: ts.CompilerOptions) {
+export function compile(code: string, compilerOptions?: ts.CompilerOptions) {
   return new Promise<string>((resolve) => {
     // tsconfig 配置
-    const options = {
+    const options: ts.CompilerOptions = {
       module: ts.ModuleKind.CommonJS,
       target: ts.ScriptTarget.ES2015,
       suppressOutputPathCheck: false,
@@ -32,9 +47,9 @@ export function read(code: string, compilerOptions?: ts.CompilerOptions) {
       }
     };
 
-
     // 监听文件输出
     compilerHost.writeFile = (fileName, data) => {
+      context[fileName.split('.')[0]] = data
       if (fileName.replace(/\.js$/, '.ts') === taskId) {
         resolve(data)
       }
@@ -48,22 +63,21 @@ export function read(code: string, compilerOptions?: ts.CompilerOptions) {
 }
 
 /**
- * 编译ts文件，输出js字符串
+ * 读取ts代码并执行，获取export的变量
  */
-export async function readTsFile(file: string, compilerOptions?: ts.CompilerOptions) {
-  const buffer = await fs.readFile(file)
-  const code = buffer.toString()
-  const result = await read(code, compilerOptions)
-  return result
+export async function readTsExport(code: string, compilerOptions?: ts.CompilerOptions) {
+  const result = await compile(code, compilerOptions)
+  // 创建执行上下文
+  return vm.runInContext(result, vm.createContext(contextModule))
 }
 
 /**
- * 读取ts代码并执行，获取export的变量
+ * 读取ts文件并执行，获取export的变量
  */
 export async function readTsFileExport(file: string, compilerOptions?: ts.CompilerOptions) {
-  const buffer = await fs.readFile(file)
+  const buffer = await promisify(fs.readFile)(file)
   const code = buffer.toString()
-  const result = await read(code, compilerOptions)
-  // 从nodejs全局上下文执行
-  return vm.runInContext(result, vm.createContext(module))
+  const result = await compile(code, compilerOptions)
+  // 创建执行上下文
+  return vm.runInContext(result, vm.createContext(contextModule))
 }

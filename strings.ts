@@ -1,7 +1,8 @@
+import { key1 } from "./keys";
 
 export default {
   en: {
-    dp_switch_off: 'off',
+    dp_switch_off: 'Off',
     dp_switch_on: 'Open',
     confirm: 'Ok',
     timer: 'Timer',
@@ -12,7 +13,7 @@ export default {
     dp_dpcodeenum: 'Enum',
     dp_dpcodeenum_12km_h: '12km',
     dp_timer_on: 'on',
-    dp_timer_off: 'off',
+    dp_timer_off: key1,
   },
   zh: {
     dp_switch_off: '关闭',
@@ -26,6 +27,6 @@ export default {
     dp_dpcodeenum: '枚举型',
     dp_dpcodeenum_12km_h: '12千米',
     dp_timer_on: '开',
-    dp_timer_off: '关',
+    dp_timer_off: key1,
   },
 };
