@@ -1,1 +1,1 @@
-export * from './core/ts-read-exports'
+export * from './core'

@@ -1,10 +1,10 @@
 {
-  "name": "@saber2pr/ts-read-exports",
+  "name": "@saber2pr/ts-compiler",
   "version": "0.0.1",
-  "description": "read ts exports.",
+  "description": "ts compiler utils.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Saber2pr/ts-read-exports.git"
+    "url": "git+https://github.com/Saber2pr/ts-compiler.git"
   },
   "author": "saber2pr",
   "license": "ISC",

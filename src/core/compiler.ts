@@ -1,17 +1,15 @@
-import fs from 'fs';
 import { resolve } from 'path';
 import ts from 'typescript';
-import { promisify } from 'util';
 import vm from 'vm';
 
 // 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
-const context = {}
-const contextModule = {
+const contextModuleMap = {}
+export const context = {
   ...module, require: (id: string) => {
     const uri = resolve(id)
-    if (uri in context) {
-      vm.runInContext(context[uri], vm.createContext(contextModule))
-      return contextModule.exports
+    if (uri in contextModuleMap) {
+      vm.runInContext(contextModuleMap[uri], vm.createContext(context))
+      return context.exports
     }
     return module.require(id)
   }
@@ -49,7 +47,7 @@ export function compile(code: string, compilerOptions?: ts.CompilerOptions) {
 
     // 监听文件输出
     compilerHost.writeFile = (fileName, data) => {
-      context[fileName.split('.')[0]] = data
+      contextModuleMap[fileName.split('.')[0]] = data
       if (fileName.replace(/\.js$/, '.ts') === taskId) {
         resolve(data)
       }
@@ -60,24 +58,4 @@ export function compile(code: string, compilerOptions?: ts.CompilerOptions) {
     // 开始编译
     program.emit();
   })
-}
-
-/**
- * 读取ts代码并执行，获取export的变量
- */
-export async function readTsExport(code: string, compilerOptions?: ts.CompilerOptions) {
-  const result = await compile(code, compilerOptions)
-  // 创建执行上下文
-  return vm.runInContext(result, vm.createContext(contextModule))
-}
-
-/**
- * 读取ts文件并执行，获取export的变量
- */
-export async function readTsFileExport(file: string, compilerOptions?: ts.CompilerOptions) {
-  const buffer = await promisify(fs.readFile)(file)
-  const code = buffer.toString()
-  const result = await compile(code, compilerOptions)
-  // 创建执行上下文
-  return vm.runInContext(result, vm.createContext(contextModule))
 }
