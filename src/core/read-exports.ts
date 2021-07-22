@@ -1,5 +1,5 @@
 import fs from 'fs';
-import ts from 'typescript';
+import ts from 'typescript/lib/typescript';
 import { promisify } from 'util';
 import vm from 'vm';
 
