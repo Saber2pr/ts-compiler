@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import ts from 'typescript';
+import ts from 'typescript/lib/typescript';
 import vm from 'vm';
 
 // 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
