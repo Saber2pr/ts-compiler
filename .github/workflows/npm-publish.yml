@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install Dep
+        run: yarn
       - name: publish with latest tag
         uses: JS-DevTools/npm-publish@v1
         with:
