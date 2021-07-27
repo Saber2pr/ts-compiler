@@ -1,15 +1,16 @@
 import { resolve } from 'path';
 import ts from 'typescript/lib/typescript';
-import vm from 'vm';
+
+import { runCode } from './runCode';
 
 // 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
 const contextModuleMap = {}
+const contentModule = { exports: {} }
 export const context = {
-  ...module, require: (id: string) => {
+  module: contentModule, exports: contentModule.exports, __dirname, require: (id: string) => {
     const uri = resolve(id)
     if (uri in contextModuleMap) {
-      vm.runInContext(contextModuleMap[uri], vm.createContext(context))
-      return context.exports
+      return runCode(contextModuleMap[uri], context)
     }
     return module.require(id)
   }

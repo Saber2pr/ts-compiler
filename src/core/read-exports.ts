@@ -1,17 +1,17 @@
 import fs from 'fs';
 import ts from 'typescript/lib/typescript';
 import { promisify } from 'util';
-import vm from 'vm';
 
 import { compile, context } from './compiler';
+import { runCode } from './runCode';
 
 /**
  * 读取ts代码并执行，获取export的变量
  */
 export async function readTsExport(code: string, compilerOptions?: ts.CompilerOptions) {
   const result = await compile(code, compilerOptions)
-  // 创建执行上下文
-  return vm.runInContext(result, vm.createContext(context))
+  const retObj = runCode(result, context)
+  return retObj.default ?? retObj
 }
 
 /**
@@ -21,6 +21,6 @@ export async function readTsFileExport(file: string, compilerOptions?: ts.Compil
   const buffer = await promisify(fs.readFile)(file)
   const code = buffer.toString()
   const result = await compile(code, compilerOptions)
-  // 创建执行上下文
-  return vm.runInContext(result, vm.createContext(context))
+  const retObj = runCode(result, context)
+  return retObj.default ?? retObj
 }

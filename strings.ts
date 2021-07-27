@@ -1,4 +1,8 @@
 import { key1 } from "./keys";
+const p = require('path')
+import { parse } from 'path'
+
+const path = ''
 
 export default {
   en: {
@@ -25,8 +29,8 @@ export default {
     dp_dpcodestring: '字符型',
     dp_dpcodevalue: '数值型',
     dp_dpcodeenum: '枚举型',
-    dp_dpcodeenum_12km_h: '12千米',
-    dp_timer_on: '开',
+    dp_dpcodeenum_12km_h: parse('./b'),
+    dp_timer_on: p.parse('./a'),
     dp_timer_off: key1,
   },
 };
