@@ -20,6 +20,7 @@ export const context = {
  */
 export function compile(code: string, compilerOptions?: ts.CompilerOptions) {
   contextModuleMap = {}
+  context.exports = {}
   return new Promise<string>((resolve) => {
     // tsconfig 配置
     const options: ts.CompilerOptions = {
