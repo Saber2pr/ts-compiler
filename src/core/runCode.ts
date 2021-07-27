@@ -1,6 +1,7 @@
 import vm from 'vm';
 
 export const runCode = (code: string, context: any) => {
-  vm.runInNewContext(`;(()=>{${code}})()`, vm.createContext(context))
-  return context.module.exports
+  // commonjs to esmodule
+  vm.runInNewContext(`;((module)=>{${code};exports.default=typeof exports.default=='undefined'?module.exports:exports.default;})({exports})`, vm.createContext(context))
+  return context.exports
 }

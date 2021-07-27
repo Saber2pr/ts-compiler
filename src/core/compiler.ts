@@ -4,10 +4,9 @@ import ts from 'typescript/lib/typescript';
 import { runCode } from './runCode';
 
 // 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
-export const contextModuleMap = {}
-const contentModule = { exports: {} }
+export let contextModuleMap = {}
 export const context = {
-  module: contentModule, exports: contentModule.exports, __dirname, require: (id: string) => {
+  exports: {}, __dirname, require: (id: string) => {
     const uri = resolve(id)
     if (uri in contextModuleMap) {
       return runCode(contextModuleMap[uri], context)
@@ -20,6 +19,7 @@ export const context = {
  * 编译ts代码字符串，输出js字符串
  */
 export function compile(code: string, compilerOptions?: ts.CompilerOptions) {
+  contextModuleMap = {}
   return new Promise<string>((resolve) => {
     // tsconfig 配置
     const options: ts.CompilerOptions = {
