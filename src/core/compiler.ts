@@ -4,7 +4,7 @@ import ts from 'typescript/lib/typescript';
 import { runCode } from './runCode';
 
 // 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
-const contextModuleMap = {}
+export const contextModuleMap = {}
 const contentModule = { exports: {} }
 export const context = {
   module: contentModule, exports: contentModule.exports, __dirname, require: (id: string) => {
