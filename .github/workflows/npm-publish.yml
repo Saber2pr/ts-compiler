@@ -1,4 +1,4 @@
-name: npm-publish
+name: Npm Publish
 
 on:
   push:
@@ -6,12 +6,15 @@ on:
       - 'v*.*.*'
 
 jobs:
-  npm-publish:
-    runs-on: ubuntu-latest
+  Npm-Publish:
+    runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Dep
-        run: yarn
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Install Deps
+        run: yarn install
+
       - name: publish with latest tag
         uses: JS-DevTools/npm-publish@v1
         with:
