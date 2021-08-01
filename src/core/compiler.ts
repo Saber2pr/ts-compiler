@@ -1,27 +1,25 @@
 import path from 'path';
 import ts from 'typescript/lib/typescript';
 
-import { runCode } from './runCode';
-
-// 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
 export let contextModuleMap = {}
-export const globalVars = {
-  exports: {}, __dirname: '.', require: (id: string) => {
-    const uri = path.resolve(id)
-    if (uri in contextModuleMap) {
-      return runCode(contextModuleMap[uri], globalVars)
-    }
-    return module.require(id)
-  }
+
+export type CompilerOptions = {
+  compilerOptions?: ts.CompilerOptions
+  context?: any
+  visit?(node: ts.Node): any
 }
 
 /**
  * 编译ts代码字符串，输出js字符串
  */
-export function compile(code: string, compilerOptions?: ts.CompilerOptions, context?: any) {
+export function compile(code: string, options?: CompilerOptions) {
+  const context = options?.context
+  const compilerOptions = options?.compilerOptions
+  const visit = options?.visit
+
   contextModuleMap = typeof context === 'object' ? context : {}
-  globalVars.exports = {}
-  return new Promise<string>((resolve) => {
+
+  return new Promise<string>(async (resolve) => {
     // tsconfig 配置
     const options: ts.CompilerOptions = {
       module: ts.ModuleKind.CommonJS,
@@ -30,34 +28,41 @@ export function compile(code: string, compilerOptions?: ts.CompilerOptions, cont
       ...(compilerOptions ?? {})
     };
 
-    // 创建一个ts编译器
+    // 创建一个ts编译器读写器
     const compilerHost = ts.createCompilerHost(options);
 
-    // 创建一个uuid
-    const taskId = `${setTimeout(() => { })}.ts`
+    // 创建入口文件
+    const uuid = setTimeout(() => { })
+    const sourceFile = { fileName: `${uuid}.ts`, sourceText: code, outputFileName: `${uuid}.js` }
 
-    // 拦截获取文件，返回对应code。类似req、res
+    // 重写readFile
     const originalGetSourceFile = compilerHost.getSourceFile;
-    compilerHost.getSourceFile = (fileName) => {
-      if (fileName === taskId) {
-        return ts.createSourceFile(fileName, code, ts.ScriptTarget.ES2015, true)
-      }
-      else {
+    compilerHost.getSourceFile = fileName => {
+      if (fileName === sourceFile.fileName) {
+        return ts.createSourceFile(fileName, code, options.target, true)
+      } else {
         return originalGetSourceFile.call(compilerHost, fileName);
       }
     };
 
-    // 监听文件输出
+    // 将编译输出的文件写入moduleMap
     compilerHost.writeFile = (fileName, data) => {
       contextModuleMap[path.resolve(fileName).split('.')[0]] = data
-      if (fileName.replace(/\.js$/, '.ts') === taskId) {
+      if (fileName === sourceFile.outputFileName) {
         resolve(data)
       }
     };
 
-    // 创建编译进程
-    const program = ts.createProgram([taskId], options, compilerHost);
-    // 开始编译
+    // 创建编译器
+    const program = ts.createProgram([sourceFile.fileName], options, compilerHost);
+
+    // 遍历ast
+    if (visit) {
+      const rootNode = program.getSourceFiles().filter(sourceFile => !sourceFile.isDeclarationFile)[0]
+      await visit(rootNode)
+    }
+
+    // 输出结果
     program.emit();
   })
 }

@@ -19,6 +19,8 @@ describe('ReadExports', () => {
     const path = ''
     
     export default {
+      __dirname,
+      __filename,
       en: {
         dp_switch_off: 'Off',
         dp_switch_on: 'Open',
@@ -48,8 +50,10 @@ describe('ReadExports', () => {
         dp_timer_off: key1,
       },
     };
-    `, null, context)
+    `, './string.ts', { context })
     expect(result).toEqual({
+      __dirname: '.',
+      __filename: './string.ts',
       en: {
         dp_switch_off: 'Off',
         dp_switch_on: 'Open',
