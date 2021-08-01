@@ -1,15 +1,15 @@
-import { resolve } from 'path';
+import path from 'path';
 import ts from 'typescript/lib/typescript';
 
 import { runCode } from './runCode';
 
 // 配置nodejs模块，当ts编译时，将文件注入到nodejs全局模块
 export let contextModuleMap = {}
-export const context = {
-  exports: {}, __dirname, require: (id: string) => {
-    const uri = resolve(id)
+export const globalVars = {
+  exports: {}, __dirname: '.', require: (id: string) => {
+    const uri = path.resolve(id)
     if (uri in contextModuleMap) {
-      return runCode(contextModuleMap[uri], context)
+      return runCode(contextModuleMap[uri], globalVars)
     }
     return module.require(id)
   }
@@ -18,9 +18,9 @@ export const context = {
 /**
  * 编译ts代码字符串，输出js字符串
  */
-export function compile(code: string, compilerOptions?: ts.CompilerOptions) {
-  contextModuleMap = {}
-  context.exports = {}
+export function compile(code: string, compilerOptions?: ts.CompilerOptions, context?: any) {
+  contextModuleMap = typeof context === 'object' ? context : {}
+  globalVars.exports = {}
   return new Promise<string>((resolve) => {
     // tsconfig 配置
     const options: ts.CompilerOptions = {
@@ -49,7 +49,7 @@ export function compile(code: string, compilerOptions?: ts.CompilerOptions) {
 
     // 监听文件输出
     compilerHost.writeFile = (fileName, data) => {
-      contextModuleMap[fileName.split('.')[0]] = data
+      contextModuleMap[path.resolve(fileName).split('.')[0]] = data
       if (fileName.replace(/\.js$/, '.ts') === taskId) {
         resolve(data)
       }
