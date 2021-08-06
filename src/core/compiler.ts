@@ -6,7 +6,7 @@ export let contextModuleMap = {}
 export type CompilerOptions = {
   compilerOptions?: ts.CompilerOptions
   context?: any
-  visit?(node: ts.Node): any
+  transformers?: ts.CustomTransformers
 }
 
 /**
@@ -15,7 +15,7 @@ export type CompilerOptions = {
 export function compile(code: string, options?: CompilerOptions) {
   const context = options?.context
   const compilerOptions = options?.compilerOptions
-  const visit = options?.visit
+  const transformers = options?.transformers
 
   contextModuleMap = typeof context === 'object' ? context : {}
 
@@ -24,7 +24,7 @@ export function compile(code: string, options?: CompilerOptions) {
     const options: ts.CompilerOptions = {
       module: ts.ModuleKind.CommonJS,
       target: ts.ScriptTarget.ES2015,
-      suppressOutputPathCheck: false,
+      jsx: ts.JsxEmit.React,
       ...(compilerOptions ?? {})
     };
 
@@ -33,7 +33,7 @@ export function compile(code: string, options?: CompilerOptions) {
 
     // 创建入口文件
     const uuid = setTimeout(() => { })
-    const sourceFile = { fileName: `${uuid}.ts`, sourceText: code, outputFileName: `${uuid}.js` }
+    const sourceFile = { fileName: `${uuid}.tsx`, sourceText: code, outputFileName: `${uuid}.js` }
 
     // 重写readFile
     const originalGetSourceFile = compilerHost.getSourceFile;
@@ -56,13 +56,9 @@ export function compile(code: string, options?: CompilerOptions) {
     // 创建编译器
     const program = ts.createProgram([sourceFile.fileName], options, compilerHost);
 
-    // 遍历ast
-    if (visit) {
-      const rootNode = program.getSourceFiles().filter(sourceFile => !sourceFile.isDeclarationFile)[0]
-      await visit(rootNode)
-    }
-
     // 输出结果
-    program.emit();
+    program.emit(undefined, undefined, undefined, undefined, transformers);
   })
 }
+
+export const transpile = (code: string, options?: CompilerOptions) => ts.transpileModule(code, options)

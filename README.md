@@ -6,6 +6,11 @@
 yarn add @saber2pr/ts-compiler
 ```
 
+### Feature
+
+1. read and run ts code, get export vars.
+2. traverse ast, get import names.
+
 ### usage
 
 ```ts
