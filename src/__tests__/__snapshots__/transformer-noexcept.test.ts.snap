@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform NoExcept 1`] = `
+"function main() { try {
+    throw new Error();
+}
+catch (error) {
+    console.log(error);
+} }
+main();
+"
+`;

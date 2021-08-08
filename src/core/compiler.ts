@@ -61,4 +61,5 @@ export function compile(code: string, options?: CompilerOptions) {
   })
 }
 
+// 类型擦除不会进行类型检查
 export const transpile = (code: string, options?: CompilerOptions) => ts.transpileModule(code, options)

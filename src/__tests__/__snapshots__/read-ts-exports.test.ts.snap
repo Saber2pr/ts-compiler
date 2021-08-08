@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReadExports ReadTsExports 1`] = `
+Object {
+  "__dirname": ".",
+  "__filename": "./string.ts",
+  "en": Object {
+    "cancel": "Cancel",
+    "confirm": "Ok",
+    "dp_dpcodeenum": "Enum",
+    "dp_dpcodeenum_12km_h": "12km",
+    "dp_dpcodestring": "String",
+    "dp_dpcodevalue": "Number",
+    "dp_switch_1": "Switch",
+    "dp_switch_off": "Off",
+    "dp_switch_on": "Open",
+    "dp_timer_off": "key1",
+    "dp_timer_on": "on",
+    "timer": "Timer",
+  },
+  "zh": Object {
+    "cancel": "取消",
+    "confirm": "确定",
+    "dp_dpcodeenum": "枚举型",
+    "dp_dpcodeenum_12km_h": Object {
+      "base": "b",
+      "dir": ".",
+      "ext": "",
+      "name": "b",
+      "root": "",
+    },
+    "dp_dpcodestring": "字符型",
+    "dp_dpcodevalue": "数值型",
+    "dp_switch_1": "开关",
+    "dp_switch_off": "关闭",
+    "dp_switch_on": "打开",
+    "dp_timer_off": "key1",
+    "dp_timer_on": Object {
+      "base": "a",
+      "dir": ".",
+      "ext": "",
+      "name": "a",
+      "root": "",
+    },
+    "timer": "云定时",
+  },
+}
+`;
