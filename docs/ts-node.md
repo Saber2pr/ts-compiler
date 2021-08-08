@@ -2,9 +2,9 @@
 import ts from 'typescript';
 
 function registerExtension() {
-  const old = require.extensions['.js'];
+  const old = require.extensions['.ts'];
 
-  require.extensions['.js'] = function (m: any, filename) {
+  require.extensions['.ts'] = function (m: any, filename) {
     const _compile = m._compile;
 
     // Module.prototype._compile方法，可以对js文件进行编译加载
