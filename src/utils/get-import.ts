@@ -10,7 +10,7 @@ type ImportStatement = {
   bindings?: string[]
 }
 
-const parseImportNames = (code: string) => {
+export const parseImportNames = (code: string) => {
   const result: ImportStatement[] = []
   traverseFromString(code, node => {
     // 判断是导入声明
