@@ -35,10 +35,10 @@ export const parseImportNames = (code: string) => {
   return result
 }
 
-export const getImports = async (dirPath: string) => {
+export const getImports = async (dirPath: string): Promise<Array<ImportStatement & { file: string }>> => {
   // 遍历文件树
   const files = await walkFile(dirPath)
   // 解析导入语句
-  const names = await Promise.all(files.map(file => parseImportNames(file.content)))
+  const names = await Promise.all(files.map(file => parseImportNames(file.content).map(item => ({ ...item, file: file.path }))))
   return flat(names)
 }
