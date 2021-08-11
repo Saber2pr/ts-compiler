@@ -9,9 +9,7 @@
   "author": "saber2pr",
   "license": "ISC",
   "files": [
-    "lib/core/*",
-    "lib/utils/*",
-    "lib/index.*"
+    "lib"
   ],
   "main": "./lib/index.js",
   "scripts": {
