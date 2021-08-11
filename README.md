@@ -13,6 +13,8 @@ yarn add @saber2pr/ts-compiler
 
 ### usage
 
+see document: https://saber2pr.top/ts-compiler/
+
 ```ts
 import { compile, readTsExport, readTsFileExport, traverse, traverseFromString } from '@saber2pr/ts-compiler'
 
