@@ -1,8 +1,9 @@
-import { Entry } from '@nodelib/fs.walk';
 import ts from 'typescript/lib/typescript';
 
+import { Entry } from '@nodelib/fs.walk';
+
 import { traverseFromString } from '../core';
-import { flat } from './util';
+import { clearStr, flat } from './util';
 import { walkFile } from './walkFile';
 
 type ImportStatement = {
@@ -18,7 +19,7 @@ export const parseImportNames = (code: string) => {
     if (ts.isImportDeclaration(node)) {
       const statement: ImportStatement = {
         // 导入的包名或路径
-        library: node.moduleSpecifier.getText()
+        library: clearStr(node.moduleSpecifier.getText())
       }
       // 默认导入
       const defaultImport = node.importClause?.name

@@ -4,26 +4,26 @@ exports[`ReadExports ReadTsExports 1`] = `
 Array [
   Object {
     "default": "fs",
-    "library": "'fs'",
+    "library": "fs",
   },
   Object {
     "bindings": Array [
       "promisify",
     ],
-    "library": "'util'",
+    "library": "util",
   },
   Object {
     "bindings": Array [
       "compile",
       "CompilerOptions",
     ],
-    "library": "'./compiler'",
+    "library": "./compiler",
   },
   Object {
     "bindings": Array [
       "runCode",
     ],
-    "library": "'./runCode'",
+    "library": "./runCode",
   },
 ]
 `;
