@@ -1,16 +1,28 @@
 import path from 'path';
 import ts from 'typescript/lib/typescript';
 
+/**
+ * 保存编译产物的对象
+ */
 export let contextModuleMap = {}
 
+/**
+ * 编译选项
+ */
 export type CompilerOptions = {
   compilerOptions?: ts.CompilerOptions
+  /**
+   * 初始的 contextModuleMap
+   */
   context?: any
+  /**
+   * ast转换器
+   */
   transformers?: ts.CustomTransformers
 }
 
 /**
- * 编译ts代码字符串，输出js字符串
+ * 编译ts代码字符串，输出js字符串（会检查类型）
  */
 export function compile(code: string, options?: CompilerOptions) {
   const context = options?.context
@@ -61,5 +73,7 @@ export function compile(code: string, options?: CompilerOptions) {
   })
 }
 
-// 类型擦除不会进行类型检查
+/**
+ * 编译ts代码字符串，输出js字符串（不会检察ts类型）
+ */
 export const transpile = (code: string, options?: CompilerOptions) => ts.transpileModule(code, options)

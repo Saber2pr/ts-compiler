@@ -5,6 +5,9 @@ import * as fsWalk from '@nodelib/fs.walk';
 
 export type EntryResult = fsWalk.Entry & { content: string }
 
+/**
+ * 遍历文件夹下所有文件获取
+ */
 export const walkFile = async (dirPath: string, fliter: (entry: fsWalk.Entry) => boolean = _ => true): Promise<EntryResult[]> => {
   const entries = await new Promise<fsWalk.Entry[]>((resolve, reject) => {
     fsWalk.walk(

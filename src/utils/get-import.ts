@@ -13,6 +13,9 @@ export type ImportStatement = {
   file?: string
 }
 
+/**
+ * 解析代码中的import语句
+ */
 export const parseImportNames = (code: string, file?: string) => {
   const result: ImportStatement[] = []
   traverseFromString(code, node => {
@@ -47,6 +50,9 @@ export type FileImport = {
   imports: ImportStatement[]
 }
 
+/**
+ * 遍历文件夹下所有文件，提取所有import语句
+ */
 export async function getImports(dirPath: string): Promise<FileImport[]>
 export async function getImports(dirPath: string, fliter?: (entry: Entry) => boolean): Promise<FileImport[]>
 export async function getImports(dirPath: string, fliter?: (entry: Entry) => boolean, flatImports?: true): Promise<ImportStatement[]>

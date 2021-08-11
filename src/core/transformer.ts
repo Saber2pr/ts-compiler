@@ -20,5 +20,8 @@ export function visitNodes(
   return ts.visitEachChild(node, childNode => visitNodes(childNode, context, callback), context);
 }
 
+/**
+ * 创建一个ast转换器
+ */
 export const createTransformer = (callback: (node: ts.Node, context: ts.TransformationContext) => ts.Node): ts.TransformerFactory<ts.SourceFile> =>
   context => node => visitNodes(node, context, callback)

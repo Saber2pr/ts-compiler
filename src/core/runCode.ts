@@ -16,6 +16,9 @@ const cjsModule = {
 const createModule = (code: string) =>
   `;((module)=>{${code};exports.default=typeof exports.default=='undefined'?module.exports:exports.default;return module.exports;})({exports})`
 
+/**
+ * 执行一段js代码
+ */
 export const runCode = (code: string, __fileName?: string) => {
   return vm.runInNewContext(createModule(code), vm.createContext({
     ...cjsModule,
