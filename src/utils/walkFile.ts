@@ -1,17 +1,11 @@
-import { readFile, Stats } from 'graceful-fs';
+import { readFile } from 'graceful-fs';
 import { promisify } from 'util';
 
 import * as fsWalk from '@nodelib/fs.walk';
 
-type Result = {
-  content: string;
-  dirent: fsWalk.Dirent;
-  name: string;
-  path: string;
-  stats?: Stats;
-}
+export type EntryResult = fsWalk.Entry & { content: string }
 
-export const walkFile = async (dirPath: string, fliter: (entry: fsWalk.Entry) => boolean = _ => true): Promise<Result[]> => {
+export const walkFile = async (dirPath: string, fliter: (entry: fsWalk.Entry) => boolean = _ => true): Promise<EntryResult[]> => {
   const entries = await new Promise<fsWalk.Entry[]>((resolve, reject) => {
     fsWalk.walk(
       dirPath,

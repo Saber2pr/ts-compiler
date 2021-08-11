@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+
 import { readTsExport } from '../';
 
 describe('ReadExports', () => {

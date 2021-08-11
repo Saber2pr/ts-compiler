@@ -1,5 +1,3 @@
-import ts from 'typescript/lib/typescript';
-
 import { transpile } from '../core';
 import { transformNoExcept } from '../utils/noexcept';
 
