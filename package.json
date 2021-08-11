@@ -16,7 +16,8 @@
     "test": "jest src/__tests__",
     "start": "tsc --watch",
     "prepublishOnly": "tsc",
-    "release": "standard-version"
+    "release": "standard-version",
+    "docs": "typedoc src/index.ts"
   },
   "dependencies": {
     "@nodelib/fs.walk": "^1.2.8",
@@ -29,6 +30,7 @@
     "@types/jest": "^24.0.12",
     "jest": "^24.8.0",
     "standard-version": "^9.3.1",
-    "ts-jest": "^24.0.2"
+    "ts-jest": "^24.0.2",
+    "typedoc": "^0.21.5"
   }
 }
