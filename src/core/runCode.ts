@@ -22,7 +22,9 @@ const createModule = (code: string) =>
 export const runCode = (code: string, __fileName?: string) => {
   return vm.runInNewContext(createModule(code), vm.createContext({
     ...cjsModule,
-    __dirname: dirname(__fileName),
-    __filename: __fileName
+    ...(__fileName ? {
+      __dirname: dirname(__fileName),
+      __filename: __fileName
+    } : {})
   }))
 }
