@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/Saber2pr/ts-compiler/compare/v0.1.7...v0.1.8) (2021-08-17)
+
+
+### Bug Fixes
+
+* fliter ([8aa3810](https://github.com/Saber2pr/ts-compiler/commit/8aa381069f7c70c597b1be42d44d8975aaf69c2f))
+
 ### [0.1.7](https://github.com/Saber2pr/ts-compiler/compare/v0.1.6...v0.1.7) (2021-08-17)
 
 
