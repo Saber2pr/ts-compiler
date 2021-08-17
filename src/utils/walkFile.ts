@@ -8,18 +8,18 @@ export type EntryResult = fsWalk.Entry & { content: string }
 /**
  * 遍历文件夹下所有文件获取
  */
-export const walkFile = async (dirPath: string, fliter: (entry: fsWalk.Entry) => boolean = _ => true): Promise<EntryResult[]> => {
+export const walkFile = async (dirPath: string, fliter?: (entry: fsWalk.Entry) => boolean): Promise<EntryResult[]> => {
   const entries = await new Promise<fsWalk.Entry[]>((resolve, reject) => {
     fsWalk.walk(
       dirPath,
       {
         entryFilter: entry => {
+          if(fliter) return fliter(entry)
           const isNotNodeModules = !entry.path.includes('node_modules')
           const isNotGit = !entry.path.includes('.git')
           const isNotMin = !/\.min\.js$/.test(entry.path)
           const isCode = /\.ts$|\.tsx$|\.js$|\.jsx$/.test(entry.name)
           return (
-            fliter(entry) &&
             isNotNodeModules &&
             isNotGit &&
             isNotMin &&
