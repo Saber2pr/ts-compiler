@@ -19,11 +19,11 @@ export const walkFile = async (dirPath: string, fliter: (entry: fsWalk.Entry) =>
           const isNotMin = !/\.min\.js$/.test(entry.path)
           const isCode = /\.ts$|\.tsx$|\.js$|\.jsx$/.test(entry.name)
           return (
+            fliter(entry) &&
             isNotNodeModules &&
             isNotGit &&
             isNotMin &&
-            isCode &&
-            fliter(entry)
+            isCode
           )
         },
       },
