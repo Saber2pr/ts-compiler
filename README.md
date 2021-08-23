@@ -3,7 +3,7 @@
 > read ts exports
 
 ```bash
-yarn add @saber2pr/ts-compiler
+yarn add typescript @saber2pr/ts-compiler
 ```
 
 ### Feature
