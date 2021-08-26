@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/Saber2pr/ts-compiler/compare/v0.1.13...v0.1.14) (2021-08-26)
+
+
+### Features
+
+* walk ops ([084fe78](https://github.com/Saber2pr/ts-compiler/commit/084fe78c92e4e3eb2dc5acbf34dd0549d92350db))
+
 ### [0.1.13](https://github.com/Saber2pr/ts-compiler/compare/v0.1.12...v0.1.13) (2021-08-26)
 
 
