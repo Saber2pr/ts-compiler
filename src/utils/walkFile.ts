@@ -8,7 +8,7 @@ export type EntryResult = fsWalk.Entry & { content: string }
 /**
  * 遍历文件夹下所有文件获取
  */
-export const walkFile = async (dirPath: string, fliter?: (entry: fsWalk.Entry) => boolean): Promise<EntryResult[]> => {
+export const walkFile = async (dirPath: string, fliter?: (entry: fsWalk.Entry) => boolean, ops: fsWalk.Options = {}): Promise<EntryResult[]> => {
   const entries = await new Promise<fsWalk.Entry[]>((resolve, reject) => {
     fsWalk.walk(
       dirPath,
@@ -27,6 +27,7 @@ export const walkFile = async (dirPath: string, fliter?: (entry: fsWalk.Entry) =
             isCode
           )
         },
+        ...(ops ?? {})
       },
       (error, entries) => {
         if (error) {
