@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReadExports ReadTsExports 1`] = `
+Array [
+  Array [
+    "<Battery value={val} />",
+  ],
+  Array [
+    "<Battery value={100} theme={{ batteryColor: '#FF4800' }} />",
+  ],
+  Array [
+    "<Battery value={100} onCalcColor={calcColor} highColor=\\"#999\\" />",
+  ],
+]
+`;
