@@ -1,7 +1,7 @@
 import { scan } from ".."
 
-describe('ReadExports', () => {
-  it('ReadTsExports', () => {
+describe('Scan', () => {
+  it('ScanJSX', () => {
     const buildJsxRegExp = (tagName: string, flag = 'g') => new RegExp(`<${tagName}[\\s\\S]*?\\/>`, flag)
     const result = scan(buildJsxRegExp('Battery'), `
     import React from 'react';

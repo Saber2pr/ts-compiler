@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReadExports ReadTsExports 1`] = `
+exports[`Scan ScanJSX 1`] = `
 Array [
   Array [
     "<Battery value={val} />",
