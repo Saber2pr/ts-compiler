@@ -4,7 +4,7 @@ import { walkFile } from '../';
 
 describe('WalkFiles', () => {
   it('Walk Markdown', async () => {
-    const files = await walkFile(join(__dirname, '../../note'), entry => /\.md$/.test(entry.path))
-    expect(files.length).toEqual(3)
+    const files = await walkFile(join(__dirname, '../../.github'), entry => /\.yml$/.test(entry.path))
+    expect(files.length).toEqual(2)
   })
 })

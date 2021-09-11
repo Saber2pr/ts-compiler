@@ -14,8 +14,8 @@ export const walkFile = async (dirPath: string, fliter?: (entry: fsWalk.Entry) =
       dirPath,
       {
         entryFilter: entry => {
-          const isNotNodeModules = !entry.path.includes('node_modules')
-          const isNotGit = !entry.path.includes('.git')
+          const isNotNodeModules = !entry.path.includes('node_modules/')
+          const isNotGit = !entry.path.includes('.git/')
           if(fliter) return isNotNodeModules && isNotGit && fliter(entry)
 
           const isNotMin = !/\.min\.js$/.test(entry.path)
