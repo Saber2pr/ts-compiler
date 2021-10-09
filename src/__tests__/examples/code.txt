@@ -7,6 +7,8 @@ import Strings from '#i18n'
 
 const { convertX: cx } = Utils.RatioUtils
 
+export const test = 'test'
+
 export default () => {
   // 自定义电量颜色分配规则
   const calcColor = (top, highColor, middleColor, lowColor) => {

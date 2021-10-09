@@ -33,4 +33,11 @@ describe('Traverser', () => {
       traverser.findAllPropAssign(node).map(n => n.getText())
     ).toMatchSnapshot()
   })
+
+  it('findDefaultExport', async () => {
+    const code = await read('code.txt')
+    const root = traverser.createAstNode(code)
+    const exp = traverser.findDefaultExport(root)
+    expect(exp.getText()).toMatchSnapshot()
+  })
 })

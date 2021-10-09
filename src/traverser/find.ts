@@ -74,3 +74,13 @@ export const findAllJsxAttribute = (root: ts.Node) => {
   })
   return result
 }
+
+export const findDefaultExport = (root: ts.Node) => {
+  const result: ts.ExportAssignment[] = []
+  traverse(root, node => {
+    if (ts.isExportAssignment(node)) {
+      result.push(node)
+    }
+  })
+  return result[0]
+}
