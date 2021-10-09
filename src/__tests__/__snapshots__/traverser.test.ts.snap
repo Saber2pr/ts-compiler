@@ -1,5 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Traverser findAllArray 1`] = `
+Array [
+  "[
+        {
+          title: Strings.getLang('style_basic'),
+          contentStyle: {
+            marginTop: cx(24),
+          },
+          content: (
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row',
+              }}
+            >
+              {[100, 50, 20, 10].map((val, i) => (
+                <View key={val} style={{ flexGrow: 1 }}>
+                  <Battery value={val} />
+                </View>
+              ))}
+            </View>
+          ),
+        },
+        {
+          title: Strings.getLang('battery_power_cus2'),
+          content: <Battery value={100} theme={{ batteryColor: '#FF4800' }} />,
+          contentStyle: {
+            width: cx(86),
+            marginTop: cx(24),
+          },
+          itemStyle: {
+            marginTop: cx(20),
+          },
+        },
+        {
+          title: Strings.getLang('battery_power_mod2'),
+          content: (
+            <Battery value={100} onCalcColor={calcColor} highColor=\\"#999\\" />
+          ),
+          contentStyle: {
+            width: cx(86),
+            marginTop: cx(24),
+          },
+          itemStyle: {
+            marginTop: cx(20),
+          },
+        },
+      ]",
+  "[100, 50, 20, 10]",
+]
+`;
+
 exports[`Traverser findAllJsxAttribute 1`] = `
 Array [
   "contentPadding={false}",
@@ -115,6 +167,78 @@ Array [
             marginTop: cx(20),
           }",
   "marginTop: cx(20)",
+]
+`;
+
+exports[`Traverser findAllObject 1`] = `
+Array [
+  "{
+          title: Strings.getLang('style_basic'),
+          contentStyle: {
+            marginTop: cx(24),
+          },
+          content: (
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row',
+              }}
+            >
+              {[100, 50, 20, 10].map((val, i) => (
+                <View key={val} style={{ flexGrow: 1 }}>
+                  <Battery value={val} />
+                </View>
+              ))}
+            </View>
+          ),
+        }",
+  "{
+            marginTop: cx(24),
+          }",
+  "{
+                flex: 1,
+                flexDirection: 'row',
+              }",
+  "{ flexGrow: 1 }",
+  "{
+          title: Strings.getLang('battery_power_cus2'),
+          content: <Battery value={100} theme={{ batteryColor: '#FF4800' }} />,
+          contentStyle: {
+            width: cx(86),
+            marginTop: cx(24),
+          },
+          itemStyle: {
+            marginTop: cx(20),
+          },
+        }",
+  "{ batteryColor: '#FF4800' }",
+  "{
+            width: cx(86),
+            marginTop: cx(24),
+          }",
+  "{
+            marginTop: cx(20),
+          }",
+  "{
+          title: Strings.getLang('battery_power_mod2'),
+          content: (
+            <Battery value={100} onCalcColor={calcColor} highColor=\\"#999\\" />
+          ),
+          contentStyle: {
+            width: cx(86),
+            marginTop: cx(24),
+          },
+          itemStyle: {
+            marginTop: cx(20),
+          },
+        }",
+  "{
+            width: cx(86),
+            marginTop: cx(24),
+          }",
+  "{
+            marginTop: cx(20),
+          }",
 ]
 `;
 

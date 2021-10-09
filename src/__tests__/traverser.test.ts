@@ -40,4 +40,18 @@ describe('Traverser', () => {
     const exp = traverser.findDefaultExport(root)
     expect(exp.getText()).toMatchSnapshot()
   })
+
+  it('findAllObject', async () => {
+    const code = await read('code.txt')
+    const root = traverser.createAstNode(code)
+    const obJs = traverser.findAllObject(root)
+    expect(obJs.map(o => o.getText())).toMatchSnapshot()
+  })
+
+  it('findAllArray', async () => {
+    const code = await read('code.txt')
+    const root = traverser.createAstNode(code)
+    const arrays = traverser.findAllArray(root)
+    expect(arrays.map(o => o.getText())).toMatchSnapshot()
+  })
 })

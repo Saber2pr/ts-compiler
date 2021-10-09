@@ -84,3 +84,23 @@ export const findDefaultExport = (root: ts.Node) => {
   })
   return result[0]
 }
+
+export const findAllObject = (root: ts.Node) => {
+  const result: ts.ObjectLiteralExpression[] = []
+  traverse(root, node => {
+    if (ts.isObjectLiteralExpression(node)) {
+      result.push(node)
+    }
+  })
+  return result
+}
+
+export const findAllArray = (root: ts.Node) => {
+  const result: ts.ArrayLiteralExpression[] = []
+  traverse(root, node => {
+    if (ts.isArrayLiteralExpression(node)) {
+      result.push(node)
+    }
+  })
+  return result
+}
