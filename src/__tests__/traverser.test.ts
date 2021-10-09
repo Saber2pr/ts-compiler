@@ -54,4 +54,11 @@ describe('Traverser', () => {
     const arrays = traverser.findArrayLiteralExpression(root)
     expect(arrays.map(o => o.getText())).toMatchSnapshot()
   })
+
+  it('findJsxElementByTagName', async () => {
+    const code = await read('code.txt')
+    const root = traverser.createAstNode(code)
+    const arrays = traverser.findJsxElementByTagName(root, 'ListView')
+    expect(arrays.map(o => o.getText())).toMatchSnapshot()
+  })
 })

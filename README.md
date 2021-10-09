@@ -26,14 +26,7 @@ readTsFileExport('./test.ts').then(res => {
   console.log(res.test)
 })
 
-traverser.traverseFromString(
-  `
-import React from 'react'
-
-const App = () => <div></div>
-`,
-  node => {
-    // ast node
-  }
-)
+const ast = traverser.createAstNode(`your code`)
+traverser.findJsxElementByTagName(ast, 'View')
+// traverser.findXXX
 ```
