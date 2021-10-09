@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/Saber2pr/ts-compiler/compare/v0.2.5...v0.2.6) (2021-10-09)
+
+
+### Bug Fixes
+
+* ScriptKind ([d8a7558](https://github.com/Saber2pr/ts-compiler/commit/d8a7558e9ccf019f687d3dd8755d63c20571c8d9))
+
 ### [0.2.5](https://github.com/Saber2pr/ts-compiler/compare/v0.2.4...v0.2.5) (2021-10-09)
 
 
