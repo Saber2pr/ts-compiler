@@ -11,7 +11,7 @@ const createAstNode = (code: string) =>
  */
 const traverse = (node: ts.Node, callback: (node: ts.Node) => void) => {
   callback(node)
-  ts.forEachChild(node, node => traverse(node, callback))
+  node.forEachChild(node => traverse(node, callback))
 }
 
 /**
