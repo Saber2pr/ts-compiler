@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/Saber2pr/ts-compiler/compare/v0.2.6...v0.2.7) (2021-10-09)
+
+
+### Features
+
+* traverse ([5cd9be2](https://github.com/Saber2pr/ts-compiler/commit/5cd9be2e35702350900fe6eeec38bd2d6303766e))
+* traverse ([c47c46d](https://github.com/Saber2pr/ts-compiler/commit/c47c46d4a9f17085c2e9b53988dd3ec87453b92c))
+
 ### [0.2.6](https://github.com/Saber2pr/ts-compiler/compare/v0.2.5...v0.2.6) (2021-10-09)
 
 
