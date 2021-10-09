@@ -1,4 +1,4 @@
-import ts from 'typescript/lib/typescript';
+import ts from 'typescript/lib/typescript'
 
 /**
  * 提供一个transform helper函数
@@ -13,15 +13,24 @@ export function visitNodes(
   context: ts.TransformationContext,
   callback: (node: ts.Node, context: ts.TransformationContext) => ts.Node
 ): ts.Node {
-  const newNode = callback(node, context);
+  const newNode = callback(node, context)
   if (node !== newNode) {
-    return newNode;
+    return newNode
   }
-  return ts.visitEachChild(node, childNode => visitNodes(childNode, context, callback), context);
+  return ts.visitEachChild(
+    node,
+    childNode => visitNodes(childNode, context, callback),
+    context
+  )
 }
 
 /**
  * 创建一个ast转换器
  */
-export const createTransformer = (callback: (node: ts.Node, context: ts.TransformationContext) => ts.Node): ts.TransformerFactory<ts.SourceFile> =>
-  context => node => visitNodes(node, context, callback)
+export const createTransformer =
+  (
+    callback: (node: ts.Node, context: ts.TransformationContext) => ts.Node
+  ): ts.TransformerFactory<ts.SourceFile> =>
+  context =>
+  node =>
+    visitNodes(node, context, callback)

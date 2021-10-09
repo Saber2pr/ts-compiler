@@ -1,9 +1,12 @@
-import { scan } from ".."
+import { scan } from '..'
 
 describe('Scan', () => {
   it('ScanJSX', () => {
-    const buildJsxRegExp = (tagName: string, flag = 'g') => new RegExp(`<${tagName}[\\s\\S]*?\\/>`, flag)
-    const result = scan(buildJsxRegExp('Battery'), `
+    const buildJsxRegExp = (tagName: string, flag = 'g') =>
+      new RegExp(`<${tagName}[\\s\\S]*?\\/>`, flag)
+    const result = scan(
+      buildJsxRegExp('Battery'),
+      `
     import React from 'react';
     import { Battery, Utils } from 'tuya-panel-kit';
     
@@ -76,7 +79,8 @@ describe('Scan', () => {
         />
       );
     };
-    `)
+    `
+    )
     expect(result).toMatchSnapshot()
   })
 })

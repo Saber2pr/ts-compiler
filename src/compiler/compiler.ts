@@ -1,5 +1,5 @@
-import path from 'path';
-import ts from 'typescript/lib/typescript';
+import path from 'path'
+import ts from 'typescript/lib/typescript'
 
 /**
  * 保存编译产物的对象
@@ -31,31 +31,35 @@ export function compile(code: string, options?: CompilerOptions) {
 
   contextModuleMap = typeof context === 'object' ? context : {}
 
-  return new Promise<string>(async (resolve) => {
+  return new Promise<string>(async resolve => {
     // tsconfig 配置
     const options: ts.CompilerOptions = {
       module: ts.ModuleKind.CommonJS,
       target: ts.ScriptTarget.ES2015,
       jsx: ts.JsxEmit.React,
-      ...(compilerOptions ?? {})
-    };
+      ...(compilerOptions ?? {}),
+    }
 
     // 创建一个ts编译器读写器
-    const compilerHost = ts.createCompilerHost(options);
+    const compilerHost = ts.createCompilerHost(options)
 
     // 创建入口文件
-    const uuid = setTimeout(() => { })
-    const sourceFile = { fileName: `${uuid}.tsx`, sourceText: code, outputFileName: `${uuid}.js` }
+    const uuid = setTimeout(() => {})
+    const sourceFile = {
+      fileName: `${uuid}.tsx`,
+      sourceText: code,
+      outputFileName: `${uuid}.js`,
+    }
 
     // 重写readFile
-    const originalGetSourceFile = compilerHost.getSourceFile;
+    const originalGetSourceFile = compilerHost.getSourceFile
     compilerHost.getSourceFile = fileName => {
       if (fileName === sourceFile.fileName) {
         return ts.createSourceFile(fileName, code, options.target, true)
       } else {
-        return originalGetSourceFile.call(compilerHost, fileName);
+        return originalGetSourceFile.call(compilerHost, fileName)
       }
-    };
+    }
 
     // 将编译输出的文件写入moduleMap
     compilerHost.writeFile = (fileName, data) => {
@@ -63,17 +67,22 @@ export function compile(code: string, options?: CompilerOptions) {
       if (fileName === sourceFile.outputFileName) {
         resolve(data)
       }
-    };
+    }
 
     // 创建编译器
-    const program = ts.createProgram([sourceFile.fileName], options, compilerHost);
+    const program = ts.createProgram(
+      [sourceFile.fileName],
+      options,
+      compilerHost
+    )
 
     // 输出结果
-    program.emit(undefined, undefined, undefined, undefined, transformers);
+    program.emit(undefined, undefined, undefined, undefined, transformers)
   })
 }
 
 /**
  * 编译ts代码字符串，输出js字符串（不会检察ts类型）
  */
-export const transpile = (code: string, options?: CompilerOptions) => ts.transpileModule(code, options)
+export const transpile = (code: string, options?: CompilerOptions) =>
+  ts.transpileModule(code, options)

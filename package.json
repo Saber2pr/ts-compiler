@@ -17,7 +17,9 @@
     "start": "tsc --watch",
     "prepublishOnly": "tsc",
     "release": "standard-version",
-    "docs": "typedoc src/index.ts"
+    "lint": "prettier --write ./src",
+    "docs": "typedoc src/index.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nodelib/fs.walk": "^1.2.8",
@@ -28,9 +30,18 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.12",
+    "husky": ">=6",
     "jest": "^24.8.0",
+    "lint-staged": ">=10",
+    "prettier": "^2.4.1",
     "standard-version": "^9.3.1",
     "ts-jest": "^24.0.2",
     "typedoc": "^0.21.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint",
+      "git add ."
+    ]
   }
 }

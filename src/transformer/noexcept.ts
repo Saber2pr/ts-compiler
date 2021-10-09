@@ -1,6 +1,6 @@
-import ts from 'typescript/lib/typescript';
+import ts from 'typescript/lib/typescript'
 
-import { createTransformer } from '../core';
+import { createTransformer } from '../compiler'
 
 /**
  * 函数添加noexcept注释，在编译阶段会自动添加try catch
@@ -27,16 +27,22 @@ export const transformNoExcept = createTransformer(node => {
           // 创建一个try catch语句
           ts.factory.createTryStatement(
             node.body, // try 中是函数体内容，下面创建catch语句部分
-            ts.factory.createCatchClause('error', ts.factory.createBlock([
-              ts.factory.createExpressionStatement(// 创建一个语句
-                ts.factory.createCallExpression( // 创建调用语句，即console.log(error)
-                  ts.factory.createIdentifier('console.log'), // 创建一个标识符（函数调用） 
-                  [], // 类型参数，无
-                  [ts.factory.createIdentifier('error')]) // 创建一个标识符（函数参数）
-              )
-            ])),
+            ts.factory.createCatchClause(
+              'error',
+              ts.factory.createBlock([
+                ts.factory.createExpressionStatement(
+                  // 创建一个语句
+                  ts.factory.createCallExpression(
+                    // 创建调用语句，即console.log(error)
+                    ts.factory.createIdentifier('console.log'), // 创建一个标识符（函数调用）
+                    [], // 类型参数，无
+                    [ts.factory.createIdentifier('error')]
+                  ) // 创建一个标识符（函数参数）
+                ),
+              ])
+            ),
             undefined // finally就不创建了，只需要处理catch
-          )
+          ),
         ])
       )
     }

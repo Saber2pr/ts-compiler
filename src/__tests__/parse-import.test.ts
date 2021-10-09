@@ -1,4 +1,4 @@
-import { parseImportNames } from '../utils/get-import';
+import { parseImportNames } from '../traverser/get-import'
 
 describe('ReadExports', () => {
   it('ReadTsExports', () => {

@@ -1,22 +1,21 @@
 # @saber2pr/ts-compiler
 
-> read ts exports
+> ts compiler utils.
 
 ```bash
 yarn add @saber2pr/ts-compiler
 ```
 
-### Feature
-
-1. read and run ts code, get export vars.
-2. traverse ast, get import names.
-
-### usage
+### Usage
 
 see document: https://saber2pr.top/ts-compiler/
 
 ```ts
-import { compile, readTsExport, readTsFileExport, traverse, traverseFromString } from '@saber2pr/ts-compiler'
+import {
+  readTsExport,
+  readTsFileExport,
+  traverser,
+} from '@saber2pr/ts-compiler'
 
 readTsFileExport('./test.ts').then(res => {
   // res is value exported from ./test.ts
@@ -24,11 +23,14 @@ readTsFileExport('./test.ts').then(res => {
   console.log(res.test)
 })
 
-traverseFromString(`
+traverser.traverseFromString(
+  `
 import React from 'react'
 
 const App = () => <div></div>
-`, node => {
-  // ast node
-})
+`,
+  node => {
+    // ast node
+  }
+)
 ```

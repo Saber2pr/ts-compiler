@@ -1,18 +1,20 @@
-import { resolve } from 'path';
+import { resolve } from 'path'
 
-import { readTsExport } from '../';
+import { readTsExport } from '../'
 
 describe('ReadExports', () => {
   it('ReadTsExports', async () => {
     const context = {
-      [resolve('./keys')]: '"use strict";\r\n' +
+      [resolve('./keys')]:
+        '"use strict";\r\n' +
         'Object.defineProperty(exports, "__esModule", { value: true });\r\n' +
         'exports.key1 = void 0;\r\n' +
         "exports.key1 = 'key1';\r\n" +
-        'exports.default = exports.key1;\r\n'
+        'exports.default = exports.key1;\r\n',
     }
 
-    const result = await readTsExport(`
+    const result = await readTsExport(
+      `
     import { key1 } from "./keys";
     const p = require('path')
     import { parse } from 'path'
@@ -51,7 +53,10 @@ describe('ReadExports', () => {
         dp_timer_off: key1,
       },
     };
-    `, './string.ts', { context })
+    `,
+      './string.ts',
+      { context }
+    )
     expect(result).toMatchSnapshot()
   })
 })

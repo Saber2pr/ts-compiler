@@ -1,7 +1,7 @@
-import ts from 'typescript/lib/typescript';
+import ts from 'typescript/lib/typescript'
 
-import { transpile } from './core/compiler';
-import { visitNodes } from './core/transformer';
+import { transpile } from './compiler/compiler'
+import { visitNodes } from './transformer/transformer'
 
 const code = `
 /**
@@ -33,26 +33,31 @@ const result = transpile(code, {
                 node.parameters,
                 node.type,
                 ts.factory.createBlock([
-                  ts.factory.createTryStatement(node.body,
-                    ts.factory.createCatchClause('error', ts.factory.createBlock([
-                      ts.factory.createExpressionStatement(
-                        ts.factory.createCallExpression(
-                          ts.factory.createIdentifier('console.log'),
-                          [],
-                          [ts.factory.createIdentifier('error')])
-                      )
-                    ])),
+                  ts.factory.createTryStatement(
+                    node.body,
+                    ts.factory.createCatchClause(
+                      'error',
+                      ts.factory.createBlock([
+                        ts.factory.createExpressionStatement(
+                          ts.factory.createCallExpression(
+                            ts.factory.createIdentifier('console.log'),
+                            [],
+                            [ts.factory.createIdentifier('error')]
+                          )
+                        ),
+                      ])
+                    ),
                     undefined
-                  )
+                  ),
                 ])
               )
             }
           }
           return node
         })
-      }
-    ]
-  }
+      },
+    ],
+  },
 })
 
 console.log(result)

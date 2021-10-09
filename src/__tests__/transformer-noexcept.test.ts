@@ -1,5 +1,5 @@
-import { transpile } from '../core';
-import { transformNoExcept } from '../utils/noexcept';
+import { transpile } from '../compiler'
+import { transformNoExcept } from '../transformer/noexcept'
 
 describe('Transform', () => {
   it('NoExcept', () => {
@@ -15,10 +15,8 @@ main()
 `
     const result = transpile(code, {
       transformers: {
-        before: [
-          transformNoExcept
-        ]
-      }
+        before: [transformNoExcept],
+      },
     })
 
     expect(result.outputText).toMatchSnapshot()

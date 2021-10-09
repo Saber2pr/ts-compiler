@@ -1,10 +1,10 @@
-import ts from 'typescript/lib/typescript';
+import ts from 'typescript/lib/typescript'
 
-import { Entry } from '@nodelib/fs.walk';
+import { Entry } from '@nodelib/fs.walk'
 
-import { traverseFromString } from '../core';
-import { utils } from './util';
-import { walkFile } from './walkFile';
+import { traverseFromString } from '.'
+import { utils } from '../utils/util'
+import { walkFile } from '../utils/walkFile'
 
 export type ImportStatement = {
   library: string
@@ -23,7 +23,7 @@ export const parseImportNames = (code: string, file?: string) => {
     if (ts.isImportDeclaration(node)) {
       const statement: ImportStatement = {
         // 导入的包名或路径
-        library: utils.clearStr(node.moduleSpecifier.getText())
+        library: utils.clearStr(node.moduleSpecifier.getText()),
       }
       // 默认导入
       const defaultImport = node.importClause?.name
@@ -54,10 +54,25 @@ export type FileImport = {
  * 遍历文件夹下所有文件，提取所有import语句
  */
 export async function getImports(dirPath: string): Promise<FileImport[]>
-export async function getImports(dirPath: string, fliter?: (entry: Entry) => boolean): Promise<FileImport[]>
-export async function getImports(dirPath: string, fliter?: (entry: Entry) => boolean, flatImports?: true): Promise<ImportStatement[]>
-export async function getImports(dirPath: string, fliter?: (entry: Entry) => boolean, flatImports?: false): Promise<FileImport[]>
-export async function getImports(dirPath: string, fliter?: (entry: Entry) => boolean, flatImports: true | false = true): Promise<FileImport[] | ImportStatement[]> {
+export async function getImports(
+  dirPath: string,
+  fliter?: (entry: Entry) => boolean
+): Promise<FileImport[]>
+export async function getImports(
+  dirPath: string,
+  fliter?: (entry: Entry) => boolean,
+  flatImports?: true
+): Promise<ImportStatement[]>
+export async function getImports(
+  dirPath: string,
+  fliter?: (entry: Entry) => boolean,
+  flatImports?: false
+): Promise<FileImport[]>
+export async function getImports(
+  dirPath: string,
+  fliter?: (entry: Entry) => boolean,
+  flatImports: true | false = true
+): Promise<FileImport[] | ImportStatement[]> {
   // 遍历文件树
   const files = await walkFile(dirPath, fliter)
 
@@ -73,7 +88,7 @@ export async function getImports(dirPath: string, fliter?: (entry: Entry) => boo
       list.push({
         file: file.path,
         // 解析导入语句
-        imports: parseImportNames(file.content, file.path)
+        imports: parseImportNames(file.content, file.path),
       })
     }
   }

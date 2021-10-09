@@ -1,6 +1,6 @@
-import ts from 'typescript/lib/typescript';
+import ts from 'typescript/lib/typescript'
 
-import { traverseFromString } from '../core';
+import { traverseFromString } from '../traverser'
 
 describe('AstGetImportStatement', () => {
   const code = `
@@ -40,7 +40,7 @@ describe('AstGetImportStatement', () => {
     })
     expect(result).toEqual([
       'import { key1 } from "./keys";',
-      "import Path, { parse } from 'path'"
+      "import Path, { parse } from 'path'",
     ])
   })
 
