@@ -7,6 +7,6 @@ describe('WalkFiles', () => {
     const files = await walkFile(join(__dirname, '../../.github'), entry =>
       /\.yml$/.test(entry.path)
     )
-    expect(files.length).toEqual(2)
+    expect(files.length).toEqual(3)
   })
 })

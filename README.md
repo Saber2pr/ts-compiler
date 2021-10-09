@@ -1,5 +1,8 @@
 # @saber2pr/ts-compiler
 
+[![npm](https://img.shields.io/npm/v/@saber2pr/ts-compiler.svg?color=blue)](https://www.npmjs.com/package/@saber2pr/ts-compiler)
+[![codecov](https://codecov.io/gh/Saber2pr/ts-compiler/branch/master/graph/badge.svg?token=DI9E88OIZU)](https://codecov.io/gh/Saber2pr/ts-compiler)
+
 > ts compiler utils.
 
 ```bash
