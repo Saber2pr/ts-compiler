@@ -1,6 +1,6 @@
 {
   "name": "@saber2pr/ts-compiler",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "ts compiler utils.",
   "repository": {
     "type": "git",

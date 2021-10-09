@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/Saber2pr/ts-compiler/compare/v0.2.8...v0.2.9) (2021-10-09)
+
+
+### Features
+
+* findAllArray ([988731b](https://github.com/Saber2pr/ts-compiler/commit/988731bc753f8568e0103f0c589e922e6f64bd56))
+
 ### [0.2.8](https://github.com/Saber2pr/ts-compiler/compare/v0.2.7...v0.2.8) (2021-10-09)
 
 
