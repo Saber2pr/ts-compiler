@@ -1,6 +1,6 @@
 {
   "name": "@saber2pr/ts-compiler",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "ts compiler utils.",
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
     "release": "standard-version",
     "lint": "prettier --write ./src",
     "docs": "typedoc src/index.ts",
+    "gen:finder": "ts-node src/utils/scripts/code-gen-finder",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -36,6 +37,7 @@
     "prettier": "^2.4.1",
     "standard-version": "^9.3.1",
     "ts-jest": "^24.0.2",
+    "ts-node": "^10.2.1",
     "typedoc": "^0.21.5"
   },
   "lint-staged": {

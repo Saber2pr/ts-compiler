@@ -2,56 +2,56 @@ import { traverser } from '..'
 import { read } from './utils/read'
 
 describe('Traverser', () => {
-  it('findAllReturnJsx', async () => {
+  it('findReturnJsx', async () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
     expect(
-      traverser.findAllReturnJsx(root).map(n => n.getText())
+      traverser.findReturnStatement(root).map(n => n.getText())
     ).toMatchSnapshot()
   })
-  it('findAllPropAssign', async () => {
+  it('findPropAssign', async () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
     expect(
-      traverser.findAllPropAssign(root).map(n => n.getText())
+      traverser.findPropertyAssignment(root).map(n => n.getText())
     ).toMatchSnapshot()
   })
-  it('findAllJsxAttribute', async () => {
+  it('findJsxAttribute', async () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
     expect(
-      traverser.findAllJsxAttribute(root).map(n => n.getText())
+      traverser.findJsxAttribute(root).map(n => n.getText())
     ).toMatchSnapshot()
   })
 
-  it('findAllJsxAttribute AllProp', async () => {
+  it('findJsxAttribute AllProp', async () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
-    const attrs = traverser.findAllJsxAttribute(root)
+    const attrs = traverser.findJsxAttribute(root)
     const node = attrs.filter(attr => attr.getText().startsWith('list='))[0]
     expect(
-      traverser.findAllPropAssign(node).map(n => n.getText())
+      traverser.findJsxAttribute(node).map(n => n.getText())
     ).toMatchSnapshot()
   })
 
   it('findDefaultExport', async () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
-    const exp = traverser.findDefaultExport(root)
-    expect(exp.getText()).toMatchSnapshot()
+    const exp = traverser.findExportAssignment(root)
+    expect(exp[0].getText()).toMatchSnapshot()
   })
 
-  it('findAllObject', async () => {
+  it('findObject', async () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
-    const obJs = traverser.findAllObject(root)
+    const obJs = traverser.findObjectLiteralExpression(root)
     expect(obJs.map(o => o.getText())).toMatchSnapshot()
   })
 
-  it('findAllArray', async () => {
+  it('findArray', async () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
-    const arrays = traverser.findAllArray(root)
+    const arrays = traverser.findArrayLiteralExpression(root)
     expect(arrays.map(o => o.getText())).toMatchSnapshot()
   })
 })
