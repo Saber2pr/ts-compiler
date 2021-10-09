@@ -3,7 +3,7 @@ import ts from 'typescript/lib/typescript'
 /**
  * 创建一个ast节点
  */
-const createAstNode = (
+export const createAstNode = (
   code: string,
   scriptKind: ts.ScriptKind = ts.ScriptKind.TSX
 ) =>
@@ -18,7 +18,7 @@ const createAstNode = (
 /**
  * 递归遍历ast所有节点
  */
-const traverse = (node: ts.Node, callback: (node: ts.Node) => void) => {
+export const traverse = (node: ts.Node, callback: (node: ts.Node) => void) => {
   callback(node)
   node.forEachChild(node => traverse(node, callback))
 }
