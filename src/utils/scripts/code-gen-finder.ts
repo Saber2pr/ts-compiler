@@ -13,7 +13,7 @@ const __factory = `import ts from 'typescript/lib/typescript'
 
 import { traverse } from './traverser'
 
-export const findNodes = <T extends ts.Node | ts.Type>(
+export const findNodes = <T extends ts.Node>(
   root: ts.Node,
   kind: ts.SyntaxKind
 ): T[] => {
@@ -34,9 +34,12 @@ const createFinder = (key: string) =>
 const isNodeKey = (tsd: string, key: string) => {
   if (/^\d+$/.test(key)) return false
   if (/Keyword$/.test(key)) return false
+  if (/Type$/.test(key)) return false
   // black list
   if (
     [
+      'TypeReference',
+      'TypeParameter',
       'Parameter',
       'Constructor',
       'GetAccessor',

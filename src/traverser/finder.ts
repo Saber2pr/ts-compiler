@@ -2,7 +2,7 @@ import ts from 'typescript/lib/typescript'
 
 import { traverse } from './traverser'
 
-export const findNodes = <T extends ts.Node | ts.Type>(
+export const findNodes = <T extends ts.Node>(
   root: ts.Node,
   kind: ts.SyntaxKind
 ): T[] => {
@@ -63,9 +63,6 @@ export function findComputedPropertyName(root: ts.Node) {
     ts.SyntaxKind.ComputedPropertyName
   )
 }
-export function findTypeParameter(root: ts.Node) {
-  return findNodes<ts.TypeParameter>(root, ts.SyntaxKind.TypeParameter)
-}
 export function findDecorator(root: ts.Node) {
   return findNodes<ts.Decorator>(root, ts.SyntaxKind.Decorator)
 }
@@ -83,27 +80,6 @@ export function findMethodSignature(root: ts.Node) {
 }
 export function findMethodDeclaration(root: ts.Node) {
   return findNodes<ts.MethodDeclaration>(root, ts.SyntaxKind.MethodDeclaration)
-}
-export function findTypeReference(root: ts.Node) {
-  return findNodes<ts.TypeReference>(root, ts.SyntaxKind.TypeReference)
-}
-export function findTupleType(root: ts.Node) {
-  return findNodes<ts.TupleType>(root, ts.SyntaxKind.TupleType)
-}
-export function findUnionType(root: ts.Node) {
-  return findNodes<ts.UnionType>(root, ts.SyntaxKind.UnionType)
-}
-export function findIntersectionType(root: ts.Node) {
-  return findNodes<ts.IntersectionType>(root, ts.SyntaxKind.IntersectionType)
-}
-export function findConditionalType(root: ts.Node) {
-  return findNodes<ts.ConditionalType>(root, ts.SyntaxKind.ConditionalType)
-}
-export function findIndexedAccessType(root: ts.Node) {
-  return findNodes<ts.IndexedAccessType>(root, ts.SyntaxKind.IndexedAccessType)
-}
-export function findLiteralType(root: ts.Node) {
-  return findNodes<ts.LiteralType>(root, ts.SyntaxKind.LiteralType)
 }
 export function findNamedTupleMember(root: ts.Node) {
   return findNodes<ts.NamedTupleMember>(root, ts.SyntaxKind.NamedTupleMember)
@@ -530,33 +506,6 @@ export function findJSDocNameReference(root: ts.Node) {
     root,
     ts.SyntaxKind.JSDocNameReference
   )
-}
-export function findJSDocAllType(root: ts.Node) {
-  return findNodes<ts.JSDocAllType>(root, ts.SyntaxKind.JSDocAllType)
-}
-export function findJSDocUnknownType(root: ts.Node) {
-  return findNodes<ts.JSDocUnknownType>(root, ts.SyntaxKind.JSDocUnknownType)
-}
-export function findJSDocNullableType(root: ts.Node) {
-  return findNodes<ts.JSDocNullableType>(root, ts.SyntaxKind.JSDocNullableType)
-}
-export function findJSDocNonNullableType(root: ts.Node) {
-  return findNodes<ts.JSDocNonNullableType>(
-    root,
-    ts.SyntaxKind.JSDocNonNullableType
-  )
-}
-export function findJSDocOptionalType(root: ts.Node) {
-  return findNodes<ts.JSDocOptionalType>(root, ts.SyntaxKind.JSDocOptionalType)
-}
-export function findJSDocFunctionType(root: ts.Node) {
-  return findNodes<ts.JSDocFunctionType>(root, ts.SyntaxKind.JSDocFunctionType)
-}
-export function findJSDocVariadicType(root: ts.Node) {
-  return findNodes<ts.JSDocVariadicType>(root, ts.SyntaxKind.JSDocVariadicType)
-}
-export function findJSDocNamepathType(root: ts.Node) {
-  return findNodes<ts.JSDocNamepathType>(root, ts.SyntaxKind.JSDocNamepathType)
 }
 export function findJSDocText(root: ts.Node) {
   return findNodes<ts.JSDocText>(root, ts.SyntaxKind.JSDocText)

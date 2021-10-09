@@ -1,3 +1,4 @@
+import { SyntaxKind } from 'typescript/lib/typescript'
 import { traverser } from '..'
 import { read } from './utils/read'
 
@@ -59,6 +60,17 @@ describe('Traverser', () => {
     const code = await read('code.txt')
     const root = traverser.createAstNode(code)
     const arrays = traverser.findJsxElementByTagName(root, 'ListView')
+    expect(arrays.map(o => o.getText())).toMatchSnapshot()
+  })
+
+  it('findSelector', async () => {
+    const code = await read('code.txt')
+    const root = traverser.createAstNode(code)
+    const arrays = traverser.findSelector(root, [
+      SyntaxKind.ExportAssignment,
+      SyntaxKind.ReturnStatement,
+      SyntaxKind.JsxSelfClosingElement,
+    ])
     expect(arrays.map(o => o.getText())).toMatchSnapshot()
   })
 })
