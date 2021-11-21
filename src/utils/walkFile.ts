@@ -17,14 +17,15 @@ export const walkFile = async (
     fsWalk.walk(
       dirPath,
       {
+        deepFilter: entry => {
+          const isNotNodeModules = !/node_modules/.test(entry.path)
+          const isNotGit = !/\.git(\/|\\)?/.test(entry.path)
+          return isNotNodeModules && isNotGit
+        },
         entryFilter: entry => {
-          const isNotNodeModules = !entry.path.includes('node_modules/')
-          const isNotGit = !entry.path.includes('.git/')
-          if (fliter) return isNotNodeModules && isNotGit && fliter(entry)
-
-          const isNotMin = !/\.min\.js$/.test(entry.path)
+          if (fliter) return fliter(entry)
           const isCode = /\.ts$|\.tsx$|\.js$|\.jsx$/.test(entry.name)
-          return isNotNodeModules && isNotGit && isNotMin && isCode
+          return isCode
         },
         ...(ops ?? {}),
       },
