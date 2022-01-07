@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/Saber2pr/ts-compiler/compare/v0.3.5...v0.3.6) (2022-01-07)
+
+
+### Features
+
+* getImports ops ([3503b30](https://github.com/Saber2pr/ts-compiler/commit/3503b30839149aeb09815eb9124ec8936dda665e))
+
 ### [0.3.5](https://github.com/Saber2pr/ts-compiler/compare/v0.3.4...v0.3.5) (2021-11-21)
 
 
