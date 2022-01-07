@@ -61,22 +61,23 @@
 				<a href="#saber2prts-compiler" id="saber2prts-compiler" style="color: inherit; text-decoration: none;">
 					<h1>@saber2pr/ts-compiler</h1>
 				</a>
-				<p><a href="https://www.npmjs.com/package/@saber2pr/ts-compiler"><img src="https://img.shields.io/npm/v/@saber2pr/ts-compiler.svg?color=blue" alt="npm"></a>
-				<a href="https://codecov.io/gh/Saber2pr/ts-compiler"><img src="https://codecov.io/gh/Saber2pr/ts-compiler/branch/master/graph/badge.svg?token=DI9E88OIZU" alt="codecov"></a></p>
 				<blockquote>
-					<p>ts compiler utils.</p>
+					<p>read ts exports</p>
 				</blockquote>
 				<pre><code class="language-bash"><span style="color: #000000">yarn add @saber2pr/ts-compiler</span>
 </code></pre>
+				<a href="#feature" id="feature" style="color: inherit; text-decoration: none;">
+					<h3>Feature</h3>
+				</a>
+				<ol>
+					<li>read and run ts code, get export vars.</li>
+					<li>traverse ast, get import names.</li>
+				</ol>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h3>Usage</h3>
+					<h3>usage</h3>
 				</a>
 				<p>see document: <a href="https://saber2pr.top/ts-compiler/">https://saber2pr.top/ts-compiler/</a></p>
-				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #001080">readTsExport</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">readTsFileExport</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">traverser</span><span style="color: #000000">,</span>
-<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@saber2pr/ts-compiler&#039;</span>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">compile</span><span style="color: #000000">, </span><span style="color: #001080">readTsExport</span><span style="color: #000000">, </span><span style="color: #001080">readTsFileExport</span><span style="color: #000000">, </span><span style="color: #001080">traverse</span><span style="color: #000000">, </span><span style="color: #001080">traverseFromString</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@saber2pr/ts-compiler&#039;</span>
 
 <span style="color: #795E26">readTsFileExport</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;./test.ts&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">res</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">  </span><span style="color: #008000">// res is value exported from ./test.ts</span>
@@ -84,9 +85,13 @@
 <span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #001080">test</span><span style="color: #000000">)</span>
 <span style="color: #000000">})</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ast</span><span style="color: #000000"> = </span><span style="color: #001080">traverser</span><span style="color: #000000">.</span><span style="color: #795E26">createAstNode</span><span style="color: #000000">(</span><span style="color: #A31515">`your code`</span><span style="color: #000000">)</span>
-<span style="color: #001080">traverser</span><span style="color: #000000">.</span><span style="color: #795E26">findJsxElementByTagName</span><span style="color: #000000">(</span><span style="color: #001080">ast</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;View&#039;</span><span style="color: #000000">)</span>
-<span style="color: #008000">// traverser.findXXX</span>
+<span style="color: #795E26">traverseFromString</span><span style="color: #000000">(</span><span style="color: #A31515">`</span>
+<span style="color: #A31515">import React from &#039;react&#039;</span>
+
+<span style="color: #A31515">const App = () =&gt; &lt;div&gt;&lt;/div&gt;</span>
+<span style="color: #A31515">`</span><span style="color: #000000">, </span><span style="color: #001080">node</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// ast node</span>
+<span style="color: #000000">})</span>
 </code></pre>
 			</div>
 		</div>
@@ -95,15 +100,6 @@
 				<ul>
 					<li class=" ">
 						<a href="modules.html">Exports</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="modules/compiler.html">compiler</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="modules/transformer.html">transformer</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="modules/traverser.html">traverser</a>
 					</li>
 					<li class=" tsd-kind-namespace">
 						<a href="modules/utils.html">utils</a>
@@ -152,7 +148,13 @@
 						<a href="modules.html#scan" class="tsd-kind-icon">scan</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="modules.html#transformNoExcept" class="tsd-kind-icon">transform<wbr>NoExcept</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="modules.html#transpile" class="tsd-kind-icon">transpile</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#traverseFromString" class="tsd-kind-icon">traverse<wbr>From<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#visitNodes" class="tsd-kind-icon">visit<wbr>Nodes</a>
