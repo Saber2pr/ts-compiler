@@ -1,6 +1,6 @@
 import ts from 'typescript/lib/typescript'
 
-import { Entry } from '@nodelib/fs.walk'
+import { Entry, Options } from '@nodelib/fs.walk'
 
 import { traverseFromString } from '.'
 import { utils } from '../utils/util'
@@ -56,25 +56,38 @@ export type FileImport = {
 export async function getImports(dirPath: string): Promise<FileImport[]>
 export async function getImports(
   dirPath: string,
-  fliter?: (entry: Entry) => boolean
+  fliter: (entry: Entry) => boolean
 ): Promise<FileImport[]>
 export async function getImports(
   dirPath: string,
-  fliter?: (entry: Entry) => boolean,
-  flatImports?: true
+  fliter: (entry: Entry) => boolean,
+  flatImports: true
 ): Promise<ImportStatement[]>
 export async function getImports(
   dirPath: string,
-  fliter?: (entry: Entry) => boolean,
-  flatImports?: false
+  fliter: (entry: Entry) => boolean,
+  flatImports: true,
+  ops: Options
+): Promise<ImportStatement[]>
+export async function getImports(
+  dirPath: string,
+  fliter: (entry: Entry) => boolean,
+  flatImports: false
+): Promise<FileImport[]>
+export async function getImports(
+  dirPath: string,
+  fliter: (entry: Entry) => boolean,
+  flatImports: false,
+  ops: Options
 ): Promise<FileImport[]>
 export async function getImports(
   dirPath: string,
   fliter?: (entry: Entry) => boolean,
-  flatImports: true | false = true
+  flatImports: true | false = true,
+  ops?: Options
 ): Promise<FileImport[] | ImportStatement[]> {
   // 遍历文件树
-  const files = await walkFile(dirPath, fliter)
+  const files = await walkFile(dirPath, fliter, ops)
 
   const list: FileImport[] = []
   const imports: ImportStatement[] = []
