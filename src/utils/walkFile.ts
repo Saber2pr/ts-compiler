@@ -11,7 +11,7 @@ export type EntryResult = fsWalk.Entry & { content: string }
 export const walkFile = async (
   dirPath: string,
   fliter?: (entry: fsWalk.Entry) => boolean,
-  ops: fsWalk.Options = {}
+  ops: fsWalk.Options & { encoding?: BufferEncoding } = {}
 ): Promise<EntryResult[]> => {
   const entries = await new Promise<fsWalk.Entry[]>((resolve, reject) => {
     fsWalk.walk(
@@ -40,7 +40,7 @@ export const walkFile = async (
   })
   return Promise.all(
     entries.map(node =>
-      promisify(readFile)(node.path).then(res => ({
+      promisify(readFile)(node.path, { encoding: ops?.encoding }).then(res => ({
         ...node,
         content: res.toString(),
       }))
