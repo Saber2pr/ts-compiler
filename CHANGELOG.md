@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.7](https://github.com/Saber2pr/ts-compiler/compare/v0.3.6...v0.3.7) (2022-05-05)
+
+
+### Features
+
+* encodeing walkfile ([e2beff4](https://github.com/Saber2pr/ts-compiler/commit/e2beff4d8d5c77918033e0acb5e383466be881e9))
+
 ### [0.3.6](https://github.com/Saber2pr/ts-compiler/compare/v0.3.5...v0.3.6) (2022-01-07)
 
 
