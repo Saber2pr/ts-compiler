@@ -25,7 +25,7 @@ export const walkFile = async (
         entryFilter: entry => {
           if (fliter) return fliter(entry)
           const isCode = /\.ts$|\.tsx$|\.js$|\.jsx$/.test(entry.name)
-          return isCode
+          return isCode && entry.dirent.isFile()
         },
         ...(ops ?? {}),
       },
