@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.8](https://github.com/Saber2pr/ts-compiler/compare/v0.3.7...v0.3.8) (2022-07-06)
+
+
+### Bug Fixes
+
+* walk filter is file ([389a8f8](https://github.com/Saber2pr/ts-compiler/commit/389a8f88e4f27f2d6fc51cd1c9c68f061a860a0a))
+
 ### [0.3.7](https://github.com/Saber2pr/ts-compiler/compare/v0.3.6...v0.3.7) (2022-05-05)
 
 
