@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transform transform 1`] = `
+"interface Test {
+    /*this is a jsdoc comment*/
+    name: string;
+}
+"
+`;

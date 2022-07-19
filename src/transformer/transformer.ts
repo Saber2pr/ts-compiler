@@ -1,4 +1,5 @@
 import ts from 'typescript/lib/typescript'
+import { createAstNode } from '../traverser'
 
 /**
  * 提供一个transform helper函数
@@ -34,3 +35,14 @@ export const createTransformer =
   context =>
   node =>
     visitNodes(node, context, callback)
+
+export const transform = (
+  text: string,
+  transformers: ts.TransformerFactory<ts.SourceFile>[],
+  scriptKind: ts.ScriptKind = ts.ScriptKind.TSX
+) => {
+  const ast = createAstNode(text, scriptKind)
+  const newAst = ts.transform(ast, transformers)
+  const printer = ts.createPrinter()
+  return printer.printNode(ts.EmitHint.SourceFile, newAst.transformed[0], ast)
+}
