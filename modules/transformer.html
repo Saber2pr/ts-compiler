@@ -73,6 +73,8 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="transformer.html#createTransformer" class="tsd-kind-icon">create<wbr>Transformer</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="transformer.html#transform" class="tsd-kind-icon">transform</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="transformer.html#transformNoExcept" class="tsd-kind-icon">transform<wbr>NoExcept</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="transformer.html#visitNodes" class="tsd-kind-icon">visit<wbr>Nodes</a></li>
 							</ul>
 						</section>
@@ -91,7 +93,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ffb2b58/src/transformer/transformer.ts#L30">transformer/transformer.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/dddf911/src/transformer/transformer.ts#L31">transformer/transformer.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -131,6 +133,63 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="transform" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> transform</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">transform<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, transformers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TransformerFactory</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SourceFile</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, scriptKind<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ScriptKind</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/dddf911/src/transformer/transformer.ts#L39">transformer/transformer.ts:39</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>transformers: <span class="tsd-signature-type">TransformerFactory</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SourceFile</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>scriptKind: <span class="tsd-signature-type">ScriptKind</span><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="transformNoExcept" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> transform<wbr>NoExcept</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">transform<wbr>NoExcept<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TransformationContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Transformer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SourceFile</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/dddf911/src/transformer/noexcept.ts#L8">transformer/noexcept.ts:8</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>函数添加noexcept注释，在编译阶段会自动添加try catch</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>context: <span class="tsd-signature-type">TransformationContext</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Transformer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SourceFile</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
 					<a name="visitNodes" class="tsd-anchor"></a>
 					<h3>visit<wbr>Nodes</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
@@ -140,7 +199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ffb2b58/src/transformer/transformer.ts#L6">transformer/transformer.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/dddf911/src/transformer/transformer.ts#L7">transformer/transformer.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -211,6 +270,12 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="transformer.html#createTransformer" class="tsd-kind-icon">create<wbr>Transformer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="transformer.html#transform" class="tsd-kind-icon">transform</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="transformer.html#transformNoExcept" class="tsd-kind-icon">transform<wbr>NoExcept</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="transformer.html#visitNodes" class="tsd-kind-icon">visit<wbr>Nodes</a>
