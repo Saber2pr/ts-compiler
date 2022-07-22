@@ -19,7 +19,7 @@ export const walkFile = async (
       {
         deepFilter: entry => {
           const isNotNodeModules = !/node_modules/.test(entry.path)
-          const isNotGit = !/\.git(\/|\\)?/.test(entry.path)
+          const isNotGit = !/\.git(\/|\\)/.test(entry.path)
           return isNotNodeModules && isNotGit
         },
         entryFilter: entry => {
