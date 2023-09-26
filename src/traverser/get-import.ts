@@ -11,6 +11,8 @@ export type ImportStatement = {
   default?: string
   bindings?: string[]
   file?: string
+  pos: number
+  end: number
 }
 
 /**
@@ -24,6 +26,8 @@ export const parseImportNames = (code: string, file?: string) => {
       const statement: ImportStatement = {
         // 导入的包名或路径
         library: utils.clearStr(node.moduleSpecifier.getText()),
+        pos: node.pos,
+        end: node.end,
       }
       // 默认导入
       const defaultImport = node.importClause?.name
