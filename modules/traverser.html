@@ -251,7 +251,7 @@
 					<div class="tsd-signature tsd-kind-icon">File<wbr>Import<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>imports<span class="tsd-signature-symbol">: </span><a href="traverser.html#ImportStatement" class="tsd-signature-type" data-tsd-kind="Type alias">ImportStatement</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L48">traverser/get-import.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L52">traverser/get-import.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -269,10 +269,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-namespace">
 					<a name="ImportStatement" class="tsd-anchor"></a>
 					<h3>Import<wbr>Statement</h3>
-					<div class="tsd-signature tsd-kind-icon">Import<wbr>Statement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>bindings<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>default<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>file<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>library<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">Import<wbr>Statement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>bindings<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>default<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>file<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>library<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L9">traverser/get-import.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L9">traverser/get-import.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -285,10 +285,16 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> default<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
+								<h5>end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> file<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>library<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -306,7 +312,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/traverser.ts#L6">traverser/traverser.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/traverser.ts#L6">traverser/traverser.ts:6</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -337,7 +343,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L99">traverser/finder.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L99">traverser/finder.ts:99</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -360,7 +366,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L108">traverser/finder.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L108">traverser/finder.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -383,7 +389,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L156">traverser/finder.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L156">traverser/finder.ts:156</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -406,7 +412,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L216">traverser/finder.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L216">traverser/finder.ts:216</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -429,7 +435,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L168">traverser/finder.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L168">traverser/finder.ts:168</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -452,7 +458,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L21">traverser/finder.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L21">traverser/finder.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -475,7 +481,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L183">traverser/finder.ts:183</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L183">traverser/finder.ts:183</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -498,7 +504,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L105">traverser/finder.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L105">traverser/finder.ts:105</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -521,7 +527,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L240">traverser/finder.ts:240</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L240">traverser/finder.ts:240</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -544,7 +550,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L276">traverser/finder.ts:276</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L276">traverser/finder.ts:276</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -567,7 +573,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L489">traverser/finder.ts:489</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L489">traverser/finder.ts:489</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -590,7 +596,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L132">traverser/finder.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L132">traverser/finder.ts:132</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -613,7 +619,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L342">traverser/finder.ts:342</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L342">traverser/finder.ts:342</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -636,7 +642,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L444">traverser/finder.ts:444</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L444">traverser/finder.ts:444</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -659,7 +665,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L453">traverser/finder.ts:453</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L453">traverser/finder.ts:453</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -682,7 +688,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L318">traverser/finder.ts:318</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L318">traverser/finder.ts:318</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -705,7 +711,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L204">traverser/finder.ts:204</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L204">traverser/finder.ts:204</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -728,7 +734,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L597">traverser/finder.ts:597</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L597">traverser/finder.ts:597</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -751,7 +757,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L60">traverser/finder.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L60">traverser/finder.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -774,7 +780,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L186">traverser/finder.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L186">traverser/finder.ts:186</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -797,7 +803,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L273">traverser/finder.ts:273</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L273">traverser/finder.ts:273</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -820,7 +826,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L297">traverser/finder.ts:297</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L297">traverser/finder.ts:297</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -843,7 +849,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L66">traverser/finder.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L66">traverser/finder.ts:66</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -866,7 +872,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L447">traverser/finder.ts:447</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L447">traverser/finder.ts:447</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -889,7 +895,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L159">traverser/finder.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L159">traverser/finder.ts:159</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -912,7 +918,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L258">traverser/finder.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L258">traverser/finder.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -935,7 +941,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L126">traverser/finder.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L126">traverser/finder.ts:126</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -958,7 +964,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L243">traverser/finder.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L243">traverser/finder.ts:243</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -981,7 +987,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L333">traverser/finder.ts:333</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L333">traverser/finder.ts:333</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1004,7 +1010,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L471">traverser/finder.ts:471</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L471">traverser/finder.ts:471</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1027,7 +1033,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L372">traverser/finder.ts:372</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L372">traverser/finder.ts:372</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1050,7 +1056,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L375">traverser/finder.ts:375</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L375">traverser/finder.ts:375</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1073,7 +1079,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L384">traverser/finder.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L384">traverser/finder.ts:384</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1096,7 +1102,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L249">traverser/finder.ts:249</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L249">traverser/finder.ts:249</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1119,7 +1125,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L210">traverser/finder.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L210">traverser/finder.ts:210</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1142,7 +1148,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L393">traverser/finder.ts:393</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L393">traverser/finder.ts:393</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1165,7 +1171,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L267">traverser/finder.ts:267</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L267">traverser/finder.ts:267</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1188,7 +1194,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L270">traverser/finder.ts:270</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L270">traverser/finder.ts:270</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1211,7 +1217,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L264">traverser/finder.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L264">traverser/finder.ts:264</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1234,7 +1240,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L312">traverser/finder.ts:312</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L312">traverser/finder.ts:312</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1257,7 +1263,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L150">traverser/finder.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L150">traverser/finder.ts:150</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1280,7 +1286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L450">traverser/finder.ts:450</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L450">traverser/finder.ts:450</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1303,7 +1309,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L51">traverser/finder.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L51">traverser/finder.ts:51</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1326,7 +1332,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L255">traverser/finder.ts:255</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L255">traverser/finder.ts:255</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1349,7 +1355,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L360">traverser/finder.ts:360</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L360">traverser/finder.ts:360</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1372,7 +1378,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L357">traverser/finder.ts:357</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L357">traverser/finder.ts:357</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1395,7 +1401,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L351">traverser/finder.ts:351</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L351">traverser/finder.ts:351</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1418,7 +1424,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L369">traverser/finder.ts:369</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L369">traverser/finder.ts:369</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1441,7 +1447,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L495">traverser/finder.ts:495</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L495">traverser/finder.ts:495</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1464,7 +1470,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L321">traverser/finder.ts:321</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L321">traverser/finder.ts:321</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1487,7 +1493,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L525">traverser/finder.ts:525</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L525">traverser/finder.ts:525</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1510,7 +1516,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L534">traverser/finder.ts:534</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L534">traverser/finder.ts:534</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1533,7 +1539,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L555">traverser/finder.ts:555</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L555">traverser/finder.ts:555</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1556,7 +1562,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L537">traverser/finder.ts:537</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L537">traverser/finder.ts:537</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1579,7 +1585,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L558">traverser/finder.ts:558</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L558">traverser/finder.ts:558</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1602,7 +1608,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L528">traverser/finder.ts:528</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L528">traverser/finder.ts:528</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1625,7 +1631,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L519">traverser/finder.ts:519</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L519">traverser/finder.ts:519</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1648,7 +1654,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L504">traverser/finder.ts:504</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L504">traverser/finder.ts:504</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1671,7 +1677,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L552">traverser/finder.ts:552</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L552">traverser/finder.ts:552</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1694,7 +1700,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L561">traverser/finder.ts:561</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L561">traverser/finder.ts:561</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1717,7 +1723,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L543">traverser/finder.ts:543</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L543">traverser/finder.ts:543</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1740,7 +1746,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L582">traverser/finder.ts:582</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L582">traverser/finder.ts:582</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1763,7 +1769,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L546">traverser/finder.ts:546</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L546">traverser/finder.ts:546</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1786,7 +1792,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L540">traverser/finder.ts:540</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L540">traverser/finder.ts:540</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1809,7 +1815,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L549">traverser/finder.ts:549</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L549">traverser/finder.ts:549</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1832,7 +1838,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L564">traverser/finder.ts:564</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L564">traverser/finder.ts:564</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1855,7 +1861,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L579">traverser/finder.ts:579</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L579">traverser/finder.ts:579</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1878,7 +1884,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L516">traverser/finder.ts:516</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L516">traverser/finder.ts:516</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1901,7 +1907,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L522">traverser/finder.ts:522</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L522">traverser/finder.ts:522</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1924,7 +1930,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L573">traverser/finder.ts:573</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L573">traverser/finder.ts:573</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1947,7 +1953,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L510">traverser/finder.ts:510</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L510">traverser/finder.ts:510</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1970,7 +1976,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L567">traverser/finder.ts:567</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L567">traverser/finder.ts:567</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1993,7 +1999,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L498">traverser/finder.ts:498</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L498">traverser/finder.ts:498</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2016,7 +2022,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L513">traverser/finder.ts:513</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L513">traverser/finder.ts:513</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2039,7 +2045,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L570">traverser/finder.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L570">traverser/finder.ts:570</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2062,7 +2068,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L576">traverser/finder.ts:576</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L576">traverser/finder.ts:576</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2085,7 +2091,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L429">traverser/finder.ts:429</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L429">traverser/finder.ts:429</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2108,7 +2114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L432">traverser/finder.ts:432</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L432">traverser/finder.ts:432</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2131,7 +2137,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L411">traverser/finder.ts:411</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L411">traverser/finder.ts:411</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2154,7 +2160,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L423">traverser/finder.ts:423</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L423">traverser/finder.ts:423</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2177,7 +2183,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L399">traverser/finder.ts:399</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L399">traverser/finder.ts:399</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2200,7 +2206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/find.ts#L5">traverser/find.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/find.ts#L5">traverser/find.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2226,7 +2232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L441">traverser/finder.ts:441</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L441">traverser/finder.ts:441</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2249,7 +2255,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L414">traverser/finder.ts:414</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L414">traverser/finder.ts:414</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2272,7 +2278,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L408">traverser/finder.ts:408</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L408">traverser/finder.ts:408</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2295,7 +2301,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L417">traverser/finder.ts:417</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L417">traverser/finder.ts:417</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2318,7 +2324,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L402">traverser/finder.ts:402</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L402">traverser/finder.ts:402</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2341,7 +2347,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L435">traverser/finder.ts:435</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L435">traverser/finder.ts:435</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2364,7 +2370,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L27">traverser/finder.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L27">traverser/finder.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2387,7 +2393,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L288">traverser/finder.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L288">traverser/finder.ts:288</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2410,7 +2416,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L222">traverser/finder.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L222">traverser/finder.ts:222</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2433,7 +2439,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L81">traverser/finder.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L81">traverser/finder.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2456,7 +2462,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L78">traverser/finder.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L78">traverser/finder.ts:78</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2479,7 +2485,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L387">traverser/finder.ts:387</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L387">traverser/finder.ts:387</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2502,7 +2508,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L339">traverser/finder.ts:339</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L339">traverser/finder.ts:339</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2525,7 +2531,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L336">traverser/finder.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L336">traverser/finder.ts:336</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2548,7 +2554,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L378">traverser/finder.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L378">traverser/finder.ts:378</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2571,7 +2577,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L366">traverser/finder.ts:366</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L366">traverser/finder.ts:366</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2594,7 +2600,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L84">traverser/finder.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L84">traverser/finder.ts:84</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2617,7 +2623,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L381">traverser/finder.ts:381</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L381">traverser/finder.ts:381</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2640,7 +2646,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L345">traverser/finder.ts:345</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L345">traverser/finder.ts:345</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2663,7 +2669,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L363">traverser/finder.ts:363</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L363">traverser/finder.ts:363</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2686,7 +2692,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L135">traverser/finder.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L135">traverser/finder.ts:135</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2709,7 +2715,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L36">traverser/finder.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L36">traverser/finder.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2732,7 +2738,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L5">traverser/finder.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L5">traverser/finder.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2764,7 +2770,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L219">traverser/finder.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L219">traverser/finder.ts:219</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2787,7 +2793,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L585">traverser/finder.ts:585</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L585">traverser/finder.ts:585</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2810,7 +2816,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L18">traverser/finder.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L18">traverser/finder.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2833,7 +2839,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L93">traverser/finder.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L93">traverser/finder.ts:93</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2856,7 +2862,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L114">traverser/finder.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L114">traverser/finder.ts:114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2879,7 +2885,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L207">traverser/finder.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L207">traverser/finder.ts:207</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2902,7 +2908,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L144">traverser/finder.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L144">traverser/finder.ts:144</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2925,7 +2931,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L591">traverser/finder.ts:591</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L591">traverser/finder.ts:591</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2948,7 +2954,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L177">traverser/finder.ts:177</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L177">traverser/finder.ts:177</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2971,7 +2977,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L171">traverser/finder.ts:171</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L171">traverser/finder.ts:171</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2994,7 +3000,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L54">traverser/finder.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L54">traverser/finder.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3017,7 +3023,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L120">traverser/finder.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L120">traverser/finder.ts:120</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3040,7 +3046,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L456">traverser/finder.ts:456</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L456">traverser/finder.ts:456</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3063,7 +3069,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L72">traverser/finder.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L72">traverser/finder.ts:72</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3086,7 +3092,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L69">traverser/finder.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L69">traverser/finder.ts:69</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3109,7 +3115,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L57">traverser/finder.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L57">traverser/finder.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3132,7 +3138,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L30">traverser/finder.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L30">traverser/finder.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3155,7 +3161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L279">traverser/finder.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L279">traverser/finder.ts:279</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3178,7 +3184,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/find.ts#L23">traverser/find.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/find.ts#L23">traverser/find.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3204,7 +3210,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L234">traverser/finder.ts:234</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L234">traverser/finder.ts:234</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3227,7 +3233,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L462">traverser/finder.ts:462</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L462">traverser/finder.ts:462</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3250,7 +3256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L486">traverser/finder.ts:486</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L486">traverser/finder.ts:486</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3273,7 +3279,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L468">traverser/finder.ts:468</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L468">traverser/finder.ts:468</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3296,7 +3302,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L201">traverser/finder.ts:201</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L201">traverser/finder.ts:201</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3319,7 +3325,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L24">traverser/finder.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L24">traverser/finder.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3342,7 +3348,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L285">traverser/finder.ts:285</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L285">traverser/finder.ts:285</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3365,7 +3371,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L225">traverser/finder.ts:225</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L225">traverser/finder.ts:225</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3388,7 +3394,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L138">traverser/finder.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L138">traverser/finder.ts:138</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3411,7 +3417,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L192">traverser/finder.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L192">traverser/finder.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3434,7 +3440,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L42">traverser/finder.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L42">traverser/finder.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3457,7 +3463,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L87">traverser/finder.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L87">traverser/finder.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3480,7 +3486,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L45">traverser/finder.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L45">traverser/finder.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3503,7 +3509,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L231">traverser/finder.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L231">traverser/finder.ts:231</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3526,7 +3532,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L48">traverser/finder.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L48">traverser/finder.ts:48</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3549,7 +3555,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L291">traverser/finder.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L291">traverser/finder.ts:291</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3572,7 +3578,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L294">traverser/finder.ts:294</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L294">traverser/finder.ts:294</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3595,7 +3601,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L327">traverser/finder.ts:327</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L327">traverser/finder.ts:327</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3618,7 +3624,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L162">traverser/finder.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L162">traverser/finder.ts:162</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3641,7 +3647,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L477">traverser/finder.ts:477</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L477">traverser/finder.ts:477</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3664,7 +3670,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L474">traverser/finder.ts:474</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L474">traverser/finder.ts:474</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3687,7 +3693,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L492">traverser/finder.ts:492</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L492">traverser/finder.ts:492</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3710,7 +3716,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L480">traverser/finder.ts:480</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L480">traverser/finder.ts:480</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3733,7 +3739,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L300">traverser/finder.ts:300</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L300">traverser/finder.ts:300</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3756,7 +3762,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L306">traverser/finder.ts:306</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L306">traverser/finder.ts:306</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3779,7 +3785,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L246">traverser/finder.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L246">traverser/finder.ts:246</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3802,7 +3808,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L165">traverser/finder.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L165">traverser/finder.ts:165</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3825,7 +3831,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L261">traverser/finder.ts:261</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L261">traverser/finder.ts:261</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3848,7 +3854,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L282">traverser/finder.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L282">traverser/finder.ts:282</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3871,7 +3877,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/finder.ts#L198">traverser/finder.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/finder.ts#L198">traverser/finder.ts:198</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3899,7 +3905,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L56">traverser/get-import.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L60">traverser/get-import.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3918,7 +3924,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L57">traverser/get-import.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L61">traverser/get-import.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3953,7 +3959,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L61">traverser/get-import.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L65">traverser/get-import.ts:65</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3991,7 +3997,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L66">traverser/get-import.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L70">traverser/get-import.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4032,7 +4038,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L72">traverser/get-import.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L76">traverser/get-import.ts:76</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4070,7 +4076,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L77">traverser/get-import.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L81">traverser/get-import.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4120,7 +4126,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/get-import.ts#L19">traverser/get-import.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/get-import.ts#L21">traverser/get-import.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4151,7 +4157,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/traverser.ts#L21">traverser/traverser.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/traverser.ts#L21">traverser/traverser.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4200,7 +4206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/ebbe95a/src/traverser/traverser.ts#L30">traverser/traverser.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/Saber2pr/ts-compiler/blob/4b434f3/src/traverser/traverser.ts#L30">traverser/traverser.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
