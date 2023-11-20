@@ -3,7 +3,7 @@ import { promisify } from 'util'
 
 import * as fsWalk from '@nodelib/fs.walk'
 
-export type EntryResult = fsWalk.Entry & { content: string }
+export type EntryResult = fsWalk.Entry & { content?: string }
 
 /**
  * 遍历文件夹下所有文件获取
@@ -11,7 +11,10 @@ export type EntryResult = fsWalk.Entry & { content: string }
 export const walkFile = async (
   dirPath: string,
   fliter?: (entry: fsWalk.Entry) => boolean,
-  ops: fsWalk.Options & { encoding?: BufferEncoding } = {}
+  ops: fsWalk.Options & {
+    encoding?: BufferEncoding
+    withContent?: boolean
+  } = {}
 ): Promise<EntryResult[]> => {
   const entries = await new Promise<fsWalk.Entry[]>((resolve, reject) => {
     fsWalk.walk(
@@ -38,12 +41,18 @@ export const walkFile = async (
       }
     )
   })
-  return Promise.all(
-    entries.map(node =>
-      promisify(readFile)(node.path, { encoding: ops?.encoding }).then(res => ({
-        ...node,
-        content: res.toString(),
-      }))
+  if (ops.withContent) {
+    return Promise.all(
+      entries.map(node =>
+        promisify(readFile)(node.path, { encoding: ops?.encoding }).then(
+          res => ({
+            ...node,
+            content: res.toString(),
+          })
+        )
+      )
     )
-  )
+  } else {
+    return entries
+  }
 }
