@@ -14,7 +14,7 @@ export const walkFile = async (
   ops: fsWalk.Options & {
     encoding?: BufferEncoding
     withContent?: boolean
-  } = {}
+  } = { withContent: true }
 ): Promise<EntryResult[]> => {
   const entries = await new Promise<fsWalk.Entry[]>((resolve, reject) => {
     fsWalk.walk(
