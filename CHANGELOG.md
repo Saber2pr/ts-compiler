@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.19](https://github.com/Saber2pr/ts-compiler/compare/v0.3.18...v0.3.19) (2023-11-24)
+
 ### [0.3.18](https://github.com/Saber2pr/ts-compiler/compare/v0.3.17...v0.3.18) (2023-11-24)
 
 ### [0.3.17](https://github.com/Saber2pr/ts-compiler/compare/v0.3.16...v0.3.17) (2023-11-24)
