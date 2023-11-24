@@ -20,6 +20,7 @@ export type ImportStatement = {
  */
 export const parseImportNames = (code: string, file?: string) => {
   const result: ImportStatement[] = []
+  if (typeof code !== 'string') return result
   traverseFromString(code, node => {
     // 判断是导入声明
     if (ts.isImportDeclaration(node)) {
