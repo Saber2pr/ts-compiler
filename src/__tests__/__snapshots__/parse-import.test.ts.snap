@@ -1,29 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReadExports ReadTsExports 1`] = `
-Array [
-  Object {
+[
+  {
     "default": "fs",
+    "end": 21,
     "library": "fs",
+    "pos": 0,
   },
-  Object {
-    "bindings": Array [
+  {
+    "bindings": [
       "promisify",
     ],
+    "end": 55,
     "library": "util",
+    "pos": 21,
   },
-  Object {
-    "bindings": Array [
+  {
+    "bindings": [
       "compile",
       "CompilerOptions",
     ],
+    "end": 111,
     "library": "./compiler",
+    "pos": 55,
   },
-  Object {
-    "bindings": Array [
+  {
+    "bindings": [
       "runCode",
     ],
+    "end": 148,
     "library": "./runCode",
+    "pos": 111,
   },
 ]
 `;

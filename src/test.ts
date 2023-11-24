@@ -25,7 +25,6 @@ const result = transpile(code, {
             })
             if (useLogger) {
               return ts.factory.createFunctionDeclaration(
-                node.decorators,
                 node.modifiers,
                 node.asteriskToken,
                 node.name,

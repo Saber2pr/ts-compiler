@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReadExports ReadTsExports 1`] = `
-Object {
+{
   "__dirname": ".",
   "__filename": "./string.ts",
-  "en": Object {
+  "en": {
     "cancel": "Cancel",
     "confirm": "Ok",
     "dp_dpcodeenum": "Enum",
@@ -18,11 +18,11 @@ Object {
     "dp_timer_on": "on",
     "timer": "Timer",
   },
-  "zh": Object {
+  "zh": {
     "cancel": "取消",
     "confirm": "确定",
     "dp_dpcodeenum": "枚举型",
-    "dp_dpcodeenum_12km_h": Object {
+    "dp_dpcodeenum_12km_h": {
       "base": "b",
       "dir": ".",
       "ext": "",
@@ -35,7 +35,7 @@ Object {
     "dp_switch_off": "关闭",
     "dp_switch_on": "打开",
     "dp_timer_off": "key1",
-    "dp_timer_on": Object {
+    "dp_timer_on": {
       "base": "a",
       "dir": ".",
       "ext": "",
