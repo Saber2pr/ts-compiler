@@ -39,7 +39,15 @@ export const parseImportNames = (sourceCode: string, file?: string) => {
       // 解构导入
       const bindings = node.importClause?.namedBindings
       if (bindings && bindings.getChildren()) {
-        statement.bindings = bindings.getChildren().map(item => item.getText())
+        statement.bindings = bindings
+          .getChildren()
+          .map(item =>
+            item
+              .getChildren()
+              .filter(item => item.kind === ts.SyntaxKind.ImportSpecifier)
+              .map(item => item.getText())
+          )
+          .flat()
       }
       // 额外信息
       if (file) {
