@@ -2,7 +2,6 @@ import ts from 'typescript/lib/typescript'
 
 import { Entry, Options } from '@nodelib/fs.walk'
 
-import { traverseFromString } from '.'
 import { utils } from '../utils/util'
 import { walkFile } from '../utils/walkFile'
 
@@ -18,11 +17,13 @@ export type ImportStatement = {
 /**
  * 解析代码中的import语句
  */
-export const parseImportNames = (code: string, file?: string) => {
+export const parseImportNames = (sourceCode: string, file?: string) => {
   const result: ImportStatement[] = []
-  if (typeof code !== 'string') return result
-  traverseFromString(code, node => {
-    // 判断是导入声明
+
+  const sourceFile = ts.createSourceFile('example.ts', sourceCode, 99, true)
+
+  // 遍历 AST 节点，提取 ImportDeclaration
+  ts.forEachChild(sourceFile, node => {
     if (ts.isImportDeclaration(node)) {
       const statement: ImportStatement = {
         // 导入的包名或路径
@@ -36,9 +37,9 @@ export const parseImportNames = (code: string, file?: string) => {
         statement.default = defaultImport.getText()
       }
       // 解构导入
-      const bindings = node.importClause?.namedBindings as ts.NamedImports
-      if (bindings && bindings.elements) {
-        statement.bindings = bindings.elements.map(item => item.getText())
+      const bindings = node.importClause?.namedBindings
+      if (bindings && bindings.getChildren()) {
+        statement.bindings = bindings.getChildren().map(item => item.getText())
       }
       // 额外信息
       if (file) {
@@ -47,6 +48,7 @@ export const parseImportNames = (code: string, file?: string) => {
       result.push(statement)
     }
   })
+
   return result
 }
 
